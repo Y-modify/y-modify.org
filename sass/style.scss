@@ -1,0 +1,52 @@
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "bower_components/neat/app/assets/stylesheets/neat";
+$fa-font-path:  "/bower_components/font-awesome/fonts";
+@import "bower_components/font-awesome/scss/font-awesome";
+@import "sass/navigation";
+@import "sass/slider";
+@import "sass/footer";
+
+$intro-height: 160px;
+$tablet: new-breakpoint(max-width 850px 4);
+$mobile: new-breakpoint(max-width 500px 4);
+
+*{
+  -webkit-appearance: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  color: rgb(44, 62, 80);
+  font-size: 16px;
+  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, sans-serif;
+  margin: 0;
+}
+
+.intro{
+  width: 100%;
+  height: $intro-height;
+  background: white;
+  text-align: center;
+  .socials{
+    width: 33%;
+    height: $intro-height / 2;
+    line-height: $intro-height / 2;
+    @include outer-container;
+    a{
+      color: #95a5a6;
+      @include span-columns(2);
+    }
+    a:hover{
+      color: #34495e;
+    }
+    @include media($tablet) {
+      width: 60%;
+    }
+    @include media($mobile) {
+      width: 80%;
+    }
+  }
+}
