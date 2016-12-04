@@ -2,7 +2,7 @@
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta property="og:title" content="Y-modify">
   <meta property="og:type" content="website">
@@ -79,32 +79,40 @@
     <div class="slider">
   <div class="swiper-container" id="swiper-letters">
     <div class="swiper-wrapper">
+      
       <div class="swiper-slide">
         <div class="swiper-letters-box">
           <h1>YamaX</h1>
-          Next-generation automated humanoid robot
+          A Humanoid for Hobby
         </div>
       </div>
+      
       <div class="swiper-slide">
         <div class="swiper-letters-box">
-          <h1>KaraML</h1>
-          Machine Learning(ML) library for 'kara' brain lovers.
+          <h1>Ozone OS</h1>
+          Debian, CentOS, OpenSUSE, and so on for Intel Edison.
         </div>
       </div>
+      
       <div class="swiper-slide">
         <div class="swiper-letters-box">
           <h1>Enjoy making.</h1>
-          We are just doing our hobbies like we do jobs, but it's not jobs.
+          We are just doing our hobbies like jobs, but it&#39;s not jobs.
         </div>
       </div>
+      
     </div>
     <div class="swiper-pagination"></div>
   </div>
   <div class="swiper-container" id="swiper-images">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" id="swiper-image-1"></div>
-        <div class="swiper-slide" id="swiper-image-2"></div>
-        <div class="swiper-slide" id="swiper-image-3"></div>
+      
+        <div class="swiper-slide" style="background-image: url('/images/back3.jpg');"></div>
+      
+        <div class="swiper-slide" style="background-image: url('/images/back2.jpg');"></div>
+      
+        <div class="swiper-slide" style="background-image: url('/images/back1.jpg');"></div>
+      
     </div>
   </div>
 </div>
@@ -123,34 +131,76 @@
         ハードウェア寄りな人と、 逆にソフトウェア寄りな人とが集まって、 より「面白い」ものを作るべく日々議論を重ねています。
       </div>
     </div>
+    <ul class="projects">
+      <li class="project">
+        <div class="pimage scroll-animation back-yamax"></div>
+        <div class="description">
+          <h3>
+            A Humanoid Robot
+          </h3>
+          <h1>
+            YamaX
+          </h1>
+          <div class="about">
+            YamaXは、Intel Edisonを使用した2足歩行ロボットです。<br>
+            内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。<br>
+            <ul>
+              <li>シンプルな構成</li>
+              <li>用意されたアクション</li>
+              <li>汎用linux</li>
+            </ul>
+          </div>
+          <a class="btn">Watch video</a> <a class="btn">Learn more</a>
+        </div>
+      </li>
+      <li class="project">
+        <div class="pimage scroll-animation back-edison"></div>
+        <div class="description">
+          <h3>
+            Embedded OS for Edison
+          </h3>
+          <h1>
+            Ozone OS
+          </h1>
+          <div class="about">
+            YamaXは、Intel Edisonを使用した2足歩行ロボットです。<br>
+            内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。<br>
+            <ul>
+              <li>シンプルな構成</li>
+              <li>用意されたアクション</li>
+              <li>汎用linux</li>
+            </ul>
+          </div>
+          <a class="btn">Watch video</a> <a class="btn">Learn more</a>
+        </div>
+      </li>
+    </ul>
   </main>
-  <footer class="footer" role="contentinfo">
+  <footer class="footer-2" role="contentinfo">
   <div class="footer-logo">
-    <img src="/images/icons/ymxicnnl.png" alt="Icon">
+    <img src="/images/icons/ymxicnnl.png" alt="Logo image">
   </div>
-  <div class="footer-links">
     <ul>
-      <li><h3>Content</h3></li>
       <li><a href="javascript:void(0)">About</a></li>
       <li><a href="javascript:void(0)">Contact</a></li>
       <li><a href="javascript:void(0)">Products</a></li>
     </ul>
-    <ul>
-      <li><h3>Follow Us</h3></li>
-      <li><a href="javascript:void(0)">Facebook</a></li>
-      <li><a href="javascript:void(0)">Twitter</a></li>
-      <li><a href="javascript:void(0)">YouTube</a></li>
-    </ul>
-    <ul>
-      <li><h3>Legal</h3></li>
-      <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-      <li><a href="javascript:void(0)">Privacy Policy</a></li>
-    </ul>
-  </div>
 
-  <hr>
+    <div class="footer-secondary-links">
+      <ul>
+        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+      </ul>
 
-  <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+      <ul class="footer-social">
+        <li><a href="https://twitter.com/ymodify314" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.facebook.com/Ymodify314" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/b/109945619381118132728/+YmodifyOrg314/" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+        <li><a href="https://instagram.com/ymodify314/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+        <li><a href="http://y-modify.tumblr.com/" target="_blank"><i class="fa fa-tumblr fa-lg"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCnDs9Rdml-Z_bYAn3CSBxeg" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+      </ul>
+    </div>
 </footer>
 
   <script src="dest/js/bundle.min.js" charset="utf-8"></script>

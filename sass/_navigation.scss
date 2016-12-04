@@ -1,5 +1,6 @@
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bower_components/neat/app/assets/stylesheets/neat";
+@import "sass/animations";
 
 header.navigation {
   $base-border-color: transparent !default;
@@ -8,9 +9,10 @@ header.navigation {
   $large-screen: 53.75em !default;
   $navigation-padding: 3em;
   $navigation-padding-horizontal: 1em;
-  $navigation-background: #e7e7e7;
+  $navigation-padding-top: 1em;
+  $navigation-background: #f8f8f8;
+  $navigation-background-hover: #e7e7e7;
   $navigation-color: #2c3e50;
-  $navigation-color-hover: #34495e;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
@@ -23,10 +25,25 @@ header.navigation {
   $horizontal-bar-mode: $large-screen;
 
   background-color: $navigation-background;
-  border-bottom: 1px solid darken($navigation-background, 10);
+  //border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
+
+  @include keyframes(fadeIn) {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+    }
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
 
   .navigation-wrapper {
     @include clearfix;
@@ -68,7 +85,7 @@ header.navigation {
 
     &:focus,
     &:hover {
-      color: $navigation-color-hover;
+      background-color: $navigation-background-hover;
     }
   }
 
@@ -81,6 +98,14 @@ header.navigation {
 
     @include media ($horizontal-bar-mode) {
       float: left;
+    }
+  }
+
+  nav > ul li.nav-link > a{
+    &:focus,
+    &:hover {
+      color: lighten($navigation-color, 15);
+      background-color: $navigation-background !important;
     }
   }
 
@@ -135,18 +160,17 @@ header.navigation {
 
       &:focus,
       &:hover {
-        color: $navigation-color-hover;
+        background-color: $navigation-background-hover;
       }
     }
   }
 
   .active-nav-item a {
     border-bottom: 1px solid $navigation-active-link-color;
-    padding-bottom: 3px;
+    padding-top: 0;
   }
 
   // Sub menus
-
   li.more.nav-link {
     padding-right: 0;
 
@@ -154,8 +178,12 @@ header.navigation {
       padding-right: $navigation-submenu-padding;
     }
 
-    > ul > li:first-child a  {
-      padding-top: 1em;
+    > ul > li:first-child > a  {
+      margin-top: $navigation-padding-top;
+    }
+
+    > ul > li:first-child > ul  {
+      margin-top: $navigation-padding-top;
     }
 
     a {
@@ -200,6 +228,8 @@ header.navigation {
     &:focus > .submenu,
     &:hover > .submenu {
       display: block;
+      opacity: 1;
+      @include setAnimation($name: fadeIn, $duration: 200ms, $count: 1);
     }
 
     @include media($horizontal-bar-mode) {
@@ -210,7 +240,9 @@ header.navigation {
 
   ul.submenu {
     display: none;
+    opacity: 0;
     padding-left: 0;
+    z-index: -1;
 
     @include media($horizontal-bar-mode) {
       left: -$navigation-submenu-padding;
@@ -254,7 +286,7 @@ header.navigation {
         &:last-child > a {
           border-bottom-left-radius: $base-border-radius;
           border-bottom-right-radius: $base-border-radius;
-          padding-bottom: 0.7em;
+          //padding-bottom: 0.7em;
         }
       }
 

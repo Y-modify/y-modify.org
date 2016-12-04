@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function(){
   var imswiper = new Swiper ('#swiper-images', {
     speed: 600,
     initialSlide: 0,
@@ -20,6 +20,30 @@ $(document).ready(function () {
     imswiper.slidePrev();
   });
 
-  $('.description').flowtype({maxFont: 18});
+  var elements = $(".scroll-animation");
+  elements.addClass('js-fade-element-hide');
+
+  $(window).scroll(function() {
+    elements.each(function(index, element){
+      if( $(element).length > 0 ) {
+        var elementTopToPageTop = $(element).offset().top;
+        var windowTopToPageTop = $(window).scrollTop();
+        var windowInnerHeight = window.innerHeight;
+        var elementTopToWindowTop = elementTopToPageTop - windowTopToPageTop;
+        var elementTopToWindowBottom = windowInnerHeight - elementTopToWindowTop;
+        var distanceFromBottomToAppear = 300;
+
+        if(elementTopToWindowBottom > distanceFromBottomToAppear) {
+          $(element).addClass('js-fade-element-show');
+        }
+        /*else if(elementTopToWindowBottom < 0) {
+          $(element).removeClass('js-fade-element-show');
+          $(element).addClass('js-fade-element-hide');
+        }*/
+      }
+    });
+  });
+
+  $('.description').flowtype({maxFont: 16});
   $('.swiper-letters-box').flowtype({minFont: 20});
 });

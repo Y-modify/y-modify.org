@@ -1,0 +1,18 @@
+
+@mixin setAnimation($name: fadeIn, $duration: 1s, $delay: 0s, $easing: $ease-in-quad, $count: infinite, $mode: none) {
+  @include animation-timing-function($easing);
+  @include animation-duration($duration);
+  @include animation-iteration-count($count);
+  @include animation-delay($delay);
+  @include animation-name($name);
+  @include animation-fill-mode($mode);
+}
+
+.js-fade-element-hide {
+  opacity: 0;
+}
+
+.js-fade-element-show {
+  opacity: 1;
+  transition: all 400ms ease;
+}

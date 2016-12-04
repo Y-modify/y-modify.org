@@ -5,8 +5,18 @@ $fa-font-path:  "/bower_components/font-awesome/fonts";
 @import "sass/navigation";
 @import "sass/slider";
 @import "sass/footer";
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300|Roboto:300');
 
 $intro-height: 160px;
+$cell-height: 30vw;
+$cell-height-mobile: 40vw;
+$cell-title-size: 3vw;
+$cell-title-size-mobile: 6vw;
+$portfolio-min-width: 25vw;
+$portfolio-image-size: 15vw;
+$portfolio-title-size: 2em;
+$portfolio-title-size-mobile: 1em;
+$project-height: 400px;
 $tablet: new-breakpoint(max-width 850px 4);
 $mobile: new-breakpoint(max-width 500px 4);
 
@@ -14,15 +24,35 @@ $mobile: new-breakpoint(max-width 500px 4);
   -webkit-appearance: none;
 }
 
+ul{
+  list-style-type: disc;
+}
+
 a{
   text-decoration: none;
+  @include transition(all 300ms 0ms ease);
 }
 
 body{
+  background-color: desaturate(darken(#477DCA, 20%), 30%);
   color: rgb(44, 62, 80);
   font-size: 16px;
-  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, sans-serif;
+  font-family: 'Roboto', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, sans-serif;
   margin: 0;
+}
+
+main{
+  //overflow: hidden;
+}
+
+.btn{
+  width: 100px;
+  height: 25px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #009688;
+  color: white;
+  cursor: pointer;
 }
 
 .intro{
@@ -49,4 +79,71 @@ body{
       width: 80%;
     }
   }
+}
+
+.projects{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  .project{
+    height: $project-height;
+    display: flex;
+    flex-direction: row;
+    &:nth-child(even){
+      flex-direction: row-reverse;
+      @include media($tablet){
+        flex-direction: column;
+      }
+    }
+    @include media($tablet){
+      flex-direction: column;
+      height: auto;
+    }
+    .pimage{
+      overflow: hidden;
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+      background-attachment: fixed;
+      @include media($tablet){
+        width: 100%;
+        height: $project-height / 2;
+        background-attachment: scroll;
+      }
+    }
+    .description{
+      width: 50%;
+      padding: 40px;
+      @include media($tablet){
+        width: 100%;
+        padding: 20px;
+      }
+      h1,h3{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        margin: 0;
+      }
+      h3{
+        color: #27ae60;
+      }
+      h1{
+        margin: 10px 0;
+      }
+      .about{
+        margin: 20px 0;
+      }
+    }
+    background: #e7e7e7;
+    &:nth-child(even){
+      background: white;
+    }
+  }
+}
+
+.back-yamax{
+  background-image: url('/images/back1.jpg');
+}
+
+.back-edison{
+  background-image: url('/images/back2.jpg');
 }

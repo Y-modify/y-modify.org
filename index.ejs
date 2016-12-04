@@ -12,7 +12,23 @@
 <body>
   <%- include("ejs/common/_header") %>
   <main role="main">
-    <%- include("ejs/_slider") %>
+    <%- include("ejs/_slider", { items: [
+      {
+        title: "YamaX",
+        description: "A Humanoid for Hobby",
+        image: "/images/back3.jpg",
+      },
+      {
+        title: "Ozone OS",
+        description: "Debian, CentOS, OpenSUSE, and so on for Intel Edison.",
+        image: "/images/back2.jpg",
+      },
+      {
+        title: "Enjoy making.",
+        description: "We are just doing our hobbies like jobs, but it's not jobs.",
+        image: "/images/back1.jpg",
+      }
+      ]}) %>
     <div class="intro">
       <div class="socials">
         <a href="https://twitter.com/ymodify314" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
@@ -27,6 +43,50 @@
         ハードウェア寄りな人と、 逆にソフトウェア寄りな人とが集まって、 より「面白い」ものを作るべく日々議論を重ねています。
       </div>
     </div>
+    <ul class="projects">
+      <li class="project">
+        <div class="pimage scroll-animation back-yamax"></div>
+        <div class="description">
+          <h3>
+            A Humanoid Robot
+          </h3>
+          <h1>
+            YamaX
+          </h1>
+          <div class="about">
+            YamaXは、Intel Edisonを使用した2足歩行ロボットです。<br>
+            内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。<br>
+            <ul>
+              <li>シンプルな構成</li>
+              <li>用意されたアクション</li>
+              <li>汎用linux</li>
+            </ul>
+          </div>
+          <a class="btn">Watch video</a> <a class="btn">Learn more</a>
+        </div>
+      </li>
+      <li class="project">
+        <div class="pimage scroll-animation back-edison"></div>
+        <div class="description">
+          <h3>
+            Embedded OS for Edison
+          </h3>
+          <h1>
+            Ozone OS
+          </h1>
+          <div class="about">
+            YamaXは、Intel Edisonを使用した2足歩行ロボットです。<br>
+            内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。<br>
+            <ul>
+              <li>シンプルな構成</li>
+              <li>用意されたアクション</li>
+              <li>汎用linux</li>
+            </ul>
+          </div>
+          <a class="btn">Watch video</a> <a class="btn">Learn more</a>
+        </div>
+      </li>
+    </ul>
   </main>
   <%- include("ejs/common/_footer") %>
   <%- include("ejs/common/_scripts") %>

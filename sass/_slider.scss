@@ -1,4 +1,4 @@
-$slider-height: 530px;
+$slider-height: calc(90vh - 80px);
 
 .slider{
   position: relative;
@@ -16,8 +16,14 @@ $slider-height: 530px;
   .swiper-slide{
     color: white;
     .swiper-letters-box{
+      h1{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        font-size: 2.5em;
+      }
+
       position: absolute;
-      top: 10%;
+      top: 8%;
       left: 10%;
       width: 60%;
       padding: 10px;
@@ -30,14 +36,5 @@ $slider-height: 530px;
   .swiper-slide{
     background-size: cover;
     //background-attachment: fixed;
-  }
-  #swiper-image-1{
-    background-image: url('/images/back1.jpg');
-  }
-  #swiper-image-2{
-    background-image: url('/images/back2.jpg');
-  }
-  #swiper-image-3{
-    background-image: url('/images/back3.jpg');
   }
 }
