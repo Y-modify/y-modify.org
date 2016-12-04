@@ -36,12 +36,14 @@ $(function(){
         if(elementTopToWindowBottom > distanceFromBottomToAppear) {
           $(element).addClass('js-fade-element-show');
         }
-        /*else if(elementTopToWindowBottom < 0) {
-          $(element).removeClass('js-fade-element-show');
-          $(element).addClass('js-fade-element-hide');
-        }*/
       }
     });
+  });
+
+  $(".youtube").colorbox({
+        iframe:true,
+        innerWidth: '50%',
+        innerHeight: '60%'
   });
 
   $('.description').flowtype({maxFont: 16});

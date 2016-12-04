@@ -73,11 +73,11 @@ gulp.task('bowerCSS', ['bowerCSSpre'] ,function() {
 
 gulp.task('bowerJS', function() {
   var jsFilter = gulpFilter(['**/*.js', '!bower_components/html5shiv/**/*.js'], {restore: true});
-  gulp.src(bower({
+  gulp.src(['bower_components/jquery/dist/jquery.js'].concat(bower({
     paths: {
       bowerJson: 'bower.json'
     }
-  }))
+  })))
   .pipe(plumber({
     errorHandler: notify.onError("bowerJS error: <%= error.message %>")
   }))
