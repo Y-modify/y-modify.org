@@ -229,7 +229,7 @@ header.navigation {
     &:hover > .submenu {
       display: block;
       opacity: 1;
-      @include setAnimation($name: fadeIn, $duration: 200ms, $count: 1);
+      @include setAnimation($name: fadeIn, $duration: 150ms, $count: 1);
     }
 
     @include media($horizontal-bar-mode) {

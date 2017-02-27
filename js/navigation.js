@@ -1,9 +1,9 @@
 $(window).resize(function() {
-  var more = document.getElementById("js-navigation-more");
+  let more = document.getElementById("js-navigation-more");
   if ($(more).length > 0) {
-    var windowWidth = $(window).width();
-    var moreLeftSideToPageLeftSide = $(more).offset().left;
-    var moreLeftSideToPageRightSide = windowWidth - moreLeftSideToPageLeftSide;
+    let windowWidth = $(window).width();
+    let moreLeftSideToPageLeftSide = $(more).offset().left;
+    let moreLeftSideToPageRightSide = windowWidth - moreLeftSideToPageLeftSide;
 
     if (moreLeftSideToPageRightSide < 330) {
       $("#js-navigation-more .submenu .submenu").removeClass("fly-out-right");
@@ -18,7 +18,7 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
-  var menuToggle = $("#js-mobile-menu").unbind();
+  let menuToggle = $("#js-mobile-menu").unbind();
   $("#js-navigation-menu").removeClass("show");
 
   menuToggle.on("click", function(e) {

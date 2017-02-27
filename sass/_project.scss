@@ -1,0 +1,82 @@
+@import "sass/definitions";
+
+$unit-height: 400px;
+
+.herounit{
+  height: $unit-height;
+  display: flex;
+  flex-direction: row;
+  &:nth-child(even){
+    flex-direction: row-reverse;
+    @include media($tablet){
+      flex-direction: column;
+    }
+  }
+  @include media($tablet){
+    flex-direction: column;
+    height: auto;
+  }
+  .image{
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    @include media($tablet){
+      width: 100%;
+      height: $unit-height / 2;
+      background-attachment: scroll;
+    }
+  }
+  .herospace{
+    background-size: 60%;
+    background-repeat: no-repeat;
+    //background-attachment: fixed;
+    background-position: 100% -5%;
+    background-color: #2c3e50;
+    width: 100%;
+    height: 100%;
+    .description{
+      text-align: left;
+      position: relative;
+      top: 10%;
+      left: 5%;
+      h1{
+        font-size: 6em;
+        font-weight: 100;
+        color: white;
+      }
+      h3{
+        font-size: 2em;
+        color: #2ecc71;
+      }
+    }
+  }
+  .description{
+    width: 50%;
+    padding: 40px;
+    @include media($tablet){
+      width: 100%;
+      padding: 20px;
+    }
+    h1,h3{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      margin: 0;
+    }
+    h3{
+      color: #27ae60;
+    }
+    h1{
+      margin: 10px 0;
+    }
+    .about{
+      margin: 20px 0;
+      //font-size: 1.5em;
+    }
+  }
+  background: #e7e7e7;
+  &:nth-child(even){
+    background: white;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<%- include("../ejs/common/_head", {
+  title: "YamaX | Y-modify",
+  url: "www.y-modify.org/yamax",
+  imageurl: "images/yop.png",
+  sitename: "Y-modify",
+  description: "yahahahaha",
+  twitter: "@ymodify314",
+  keywords: "電子工作,YamaX,ヒューマノイド",
+}) %>
+<body>
+  <%- include("../ejs/common/_header") %>
+  <main role="main">
+    <ul class="ulist">
+      <%- include("../ejs/_hero", {
+        title: "YamaX",
+        subtitle: "a humanoid robot",
+        background: "/images/3dm.png",
+      }) %>
+      <%- include("../ejs/_project", {
+        title: "Moving",
+        subtitle: "A Neat System",
+        background: "/images/leg.jpg",
+        about: "すべてベタ書きで書かれた歩行プログラム。\n何度も検証を繰り返し、ついに歩行に成功しました。\n製作期間は数か月にも及びます。\n",
+        points: [],
+        buttons: [{
+          string: "Watch video",
+          href: "https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1",
+          className: "youtube",
+        },{
+          string: "View on Github",
+          href: "https://github.com/Y-modify/YamaX-3.2",
+        },],
+      }) %>
+      <%- include("../ejs/_project", {
+        title: "Voice Control",
+        subtitle: "with Embedded Linux",
+        background: "/images/back2.jpg",
+        about: "YamaXは基板にIntel Edisonを搭載しています。\nIntel Edisonに内蔵されたlinuxを活用して、\n音声認識、音声合成、遠隔操作等が可能です。\n",
+        points: [],
+        buttons: [{
+          string: "Watch video",
+          href: "https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1",
+        },],
+      }) %>
+      <%- include("../ejs/_project", {
+        title: "Structure",
+        subtitle: "All-in Handmade",
+        background: "/images/3dm.png",
+        about: "サーボモータのフレームから制御基板まで、ほとんどが手作りです。\n計算された形とプログラム。私たちにしか作れないロボットがここにあります。\n",
+        points: [],
+        buttons: [{
+          string: "View 3D Data",
+          href: "#",
+        },{
+          string: "View on Github",
+          href: "#",
+        },],
+      }) %>
+      <%- include("../ejs/_history", {
+        data: history,
+        title: "History of YamaX",
+        subtitle: "a very long",
+      }) %>
+    </ul>
+  </main>
+  <%- include("../ejs/common/_footer") %>
+  <%- include("../ejs/common/_scripts") %>
+</body>
+</html>

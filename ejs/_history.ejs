@@ -1,0 +1,22 @@
+<div class="history">
+  <h3><%= subtitle %></h3>
+  <h1><%= title %></h1>
+  <table class="tables">
+    <thead>
+      <tr>
+        <th>月</th>
+        <th>日</th>
+        <th>出来事</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function (value) { %>
+        <tr>
+          <td><%= value.month %></td>
+          <td><%= value.day %></td>
+          <td><%= value.event %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

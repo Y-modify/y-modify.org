@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<%- include("../../ejs/common/_head", {
+  title: "Members | Y-modify",
+  url: "www.y-modify.org/yamax",
+  imageurl: "images/yop.png",
+  sitename: "Y-modify",
+  description: "yahahahaha",
+  twitter: "@ymodify314",
+  keywords: "電子工作,YamaX,ヒューマノイド",
+}) %>
+<body>
+  <%- include("../../ejs/common/_header") %>
+  <main role="main">
+    <ul class="ulist">
+      <%- include("../../ejs/_hero", {
+        title: "Members",
+        subtitle: "About us",
+        background: "/images/tomato2.png",
+        className: "pixelated tomatobg",
+      }) %>
+      <li class="herounit">
+        <div class="members">
+          <%- include("../../ejs/_member", {
+            name: "nyanyan",
+            displayName: "Nyanyan",
+            description: `なぜかリスの写真ですが、Nyanyanと申します。
+                          ハードウェア担当で、主にYamaXプロジェクトに関わっています。
+                          まだ工作歴10年なものですからまだまだハードウェア作成の経験値は低いですが、
+                          がんばって良いロボットを創っています(作るんじゃなくて創っています。)。
+                          まだまだ未熟の身ですが、よろしくお願いします。
+                          このリスの写真は私が撮りました(自慢)`,
+          }) %>
+          <%- include("../../ejs/_member", {
+            name: "coorde",
+            displayName: "coord.e",
+            description: `一応広報部、coord.eと申します。
+                          こーどいーって読むはずです。正確にはよくわかりません(
+                          このホームページやブログなど広報関係のことをやっております。
+                          PIC16Fのアセンブラから始まって、気づけばソフトウェア開発側の人間になってしまいましたがまだハードへの情熱は忘れていません。
+                          Intel EdisonやArduinoで工作するのが好きです。最近は機械学習にチャレンジしています。
+                          YamaXのソフトウェアとFlixa, Ozone OSを担当しています。
+                          至らぬ点も数多くあるとは思いますが、よろしくお願いします。`
+          }) %>
+          <%- include("../../ejs/_member", {
+            name: "cj",
+            displayName: "CJ",
+            description: `今日は!CJです!
+                          僕は特に専門分野も未だ無いですが、Y-modifyはハードウェア開発寄りなので僕はゲーム開発に回っています!
+                          ちなみに一応ダンサーの端くれですw
+                          よろしくお願いします!`
+          }) %>
+          <%- include("../../ejs/_member", {
+            name: "jyu1",
+            displayName: "じゅーいち",
+            description: `どうも、じゅーいちでーす。
+                          …写真で車好きって分かるよね?
+                          プロジェクトとはあまり関係の無い事(プロジェクトもやる時はやる)
+                          を主にしています。coord.eやNyanyanの作る物には遠く及びませんが、
+                          それでも頑張って上達しようとしているところです。どうぞよろしく。`
+          }) %>
+          <%- include("../../ejs/_member", {
+            name: "scop",
+            displayName: "スコップ",
+            description: `はじめまして。Y-modifyの写真担当+道徳担当のスコップです。
+                          学校では物理研究会と化学研究会と写真部に入っていて、楽しい毎日を過ごしています。
+                          僕はロボットについては最低限しか知識がないので、広報部の仕事や会計をやってます。
+                          時々写真もあげたいと思いますので、よろしくおねがいします。`
+          }) %>
+        </div>
+      </li>
+    </ul>
+  </main>
+  <%- include("../../ejs/common/_footer") %>
+  <%- include("../../ejs/common/_scripts") %>
+</body>
+</html>

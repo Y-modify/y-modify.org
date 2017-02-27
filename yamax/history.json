@@ -1,0 +1,442 @@
+[
+  {
+    "month": "2014/8",
+    "day": "??",
+    "event": "YamaX構想のもととなる「山山山2014」が完成。だがサーボのトルク不足により歩けなかった。"
+  },
+  {
+    "month": 11,
+    "day": "??",
+    "event": "YamaX構想開始"
+  },
+  {
+    "month": "2015/3",
+    "day": 18,
+    "event": "YamaXの開発が始まった。自由度は23に決定した。"
+  },
+  {
+    "month": 3,
+    "day": 22,
+    "event": "サーボブラケットの開発が始まった。DOITで買ってきた厚さ1mmのアルミ板をけがき, サーボブラケットA～Dまでをけがいていった。"
+  },
+  {
+    "month": 3,
+    "day": 25,
+    "event": "サーボブラケットA～Dが採用された。"
+  },
+  {
+    "month": 5,
+    "day": 1,
+    "event": "YamaXの重量についての計算を始めた。"
+  },
+  {
+    "month": 5,
+    "day": 11,
+    "event": "YamaX重量についての計算が終了した。"
+  },
+  {
+    "month": 5,
+    "day": 12,
+    "event": "YamaXの設計が本格的に始まった"
+  },
+  {
+    "month": 5,
+    "day": 30,
+    "event": "YamaXを作り始めた。"
+  },
+  {
+    "month": 6,
+    "day": 8,
+    "event": "YamaX基板を除いてハードウェア完成"
+  },
+  {
+    "month": 7,
+    "day": 3,
+    "event": "YamaX直立時のサーボの角度を予想"
+  },
+  {
+    "month": 7,
+    "day": 10,
+    "event": "YamaX直立時のサーボの角度をArduinoを用いて予想"
+  },
+  {
+    "month": 7,
+    "day": 19,
+    "event": "Edisonでサーボを制御するのをあきらめ, 自作Arduinoを使うと決定"
+  },
+  {
+    "month": 7,
+    "day": 22,
+    "event": "YamaX直立に成功"
+  },
+  {
+    "month": 7,
+    "day": 23,
+    "event": "TLC5940のブレイクアウト基板故障"
+  },
+  {
+    "month": 7,
+    "day": 28,
+    "event": "TLC5940のブレイクアウト基板がまた故障"
+  },
+  {
+    "month": 7,
+    "day": 29,
+    "event": "TLC5940を使って自作ブレイクアウト基板を作る"
+  },
+  {
+    "month": 7,
+    "day": 30,
+    "event": "買ったブレイクアウト基板が３枚すべて故障したのでTLC5940二個使用の自作ブレイクアウト基板を作る。しかしICソケットの接触不良とTLC5940の故障を発見。また, 音声合成ICによるおしゃべりに成功"
+  },
+  {
+    "month": 7,
+    "day": 31,
+    "event": "TLC5940を買ってきて, 直立に成功"
+  },
+  {
+    "month": 8,
+    "day": 1,
+    "event": "MFT2015初日, たくさんの人に見てもらった。"
+  },
+  {
+    "month": 8,
+    "day": 2,
+    "event": "MFT2015最終日, 全力を出し切った。"
+  },
+  {
+    "month": 8,
+    "day": 3,
+    "event": "新YamaXの構想開始。身長は30cmくらいにすると決定"
+  },
+  {
+    "month": 8,
+    "day": 20,
+    "event": "雑誌「Make:」を見て足を短くするアイデアをひらめいた。YamaX2.2の設計開始"
+  },
+  {
+    "month": 8,
+    "day": 21,
+    "event": "YamaXの設計終了"
+  },
+  {
+    "month": 8,
+    "day": 28,
+    "event": "YamaX2.2作り始め。左足ほぼ完成"
+  },
+  {
+    "month": 8,
+    "day": 29,
+    "event": "左右の脚完成。胴体を作り始め。"
+  },
+  {
+    "month": 8,
+    "day": 30,
+    "event": "YamaX2.2大体完成"
+  },
+  {
+    "month": 8,
+    "day": 31,
+    "event": "脚と胴体の接合部を強化。"
+  },
+  {
+    "month": 9,
+    "day": 1,
+    "event": "注文していたサーボ制御基板が届いた。"
+  },
+  {
+    "month": 9,
+    "day": 2,
+    "event": "メイン基板を作り始めた。"
+  },
+  {
+    "month": 9,
+    "day": 3,
+    "event": "メイン基板作り終わり"
+  },
+  {
+    "month": 9,
+    "day": 4,
+    "event": "YamaXプログラム開発開始"
+  },
+  {
+    "month": 9,
+    "day": 5,
+    "event": "YamaXお辞儀に成功"
+  },
+  {
+    "month": 9,
+    "day": 7,
+    "event": "YamaX二足歩行に成功"
+  },
+  {
+    "month": 9,
+    "day": 9,
+    "event": "右回り, 左回りに成功"
+  },
+  {
+    "month": 9,
+    "day": 12,
+    "event": "創作展（学園祭）初日, たくさんの人に見てもらう"
+  },
+  {
+    "month": 9,
+    "day": 13,
+    "event": "創作展最終日, 全力を出し切る"
+  },
+  {
+    "month": 9,
+    "day": 18,
+    "event": "YamaX2.3設計開始"
+  },
+  {
+    "month": 9,
+    "day": 20,
+    "event": "頭を除いて設計終了"
+  },
+  {
+    "month": 9,
+    "day": 22,
+    "event": "頭を除いて作成終了"
+  },
+  {
+    "month": 9,
+    "day": 23,
+    "event": "ハンチング解消案を作成"
+  },
+  {
+    "month": 9,
+    "day": 24,
+    "event": "頭の設計終了。頭作成終了"
+  },
+  {
+    "month": 9,
+    "day": 26,
+    "event": "基板の大きさ決定"
+  },
+  {
+    "month": 9,
+    "day": 29,
+    "event": "歩行アルゴリズムを変更"
+  },
+  {
+    "month": 10,
+    "day": 1,
+    "event": "変更後のアルゴリズムでうまくいかないため, アルゴリズムを元に戻す"
+  },
+  {
+    "month": 10,
+    "day": 2,
+    "event": "歩行成功ブログなどで広報をする。"
+  },
+  {
+    "month": 10,
+    "day": 28,
+    "event": "YamaX2.4設計開始"
+  },
+  {
+    "month": 10,
+    "day": 29,
+    "event": "頭を除いて設計終了"
+  },
+  {
+    "month": 10,
+    "day": 30,
+    "event": "YamaX2.4ハードウェア大体完成"
+  },
+  {
+    "month": 11,
+    "day": 11,
+    "event": "メイン基板を2枚（ArduinoのみのものとEdisonをつけたものを）作ると決定"
+  },
+  {
+    "month": 11,
+    "day": 12,
+    "event": "頭はYamaX2.3のものを流用すると決定"
+  },
+  {
+    "month": 11,
+    "day": 13,
+    "event": "Arduinoのみのメイン基板完成"
+  },
+  {
+    "month": 11,
+    "day": 17,
+    "event": "歩行成功, Edison搭載メイン基板完成"
+  },
+  {
+    "month": 12,
+    "day": 10,
+    "event": "Edison搭載メイン基板で歩行成功"
+  },
+  {
+    "month": 12,
+    "day": 12,
+    "event": "YamaX 3Dモデル完成"
+  },
+  {
+    "month": 12,
+    "day": 14,
+    "event": "webカメラの動作を確認"
+  },
+  {
+    "month": 12,
+    "day": 18,
+    "event": "GUGENに向けて最終調整および準備"
+  },
+  {
+    "month": 12,
+    "day": 19,
+    "event": "GUGENでたくさんの人をおどろかせた"
+  },
+  {
+    "month": "Jan-16",
+    "day": 11,
+    "event": "YamaX3.0設計完了"
+  },
+  {
+    "month": 1,
+    "day": 15,
+    "event": "部品を作り始める"
+  },
+  {
+    "month": 1,
+    "day": 16,
+    "event": "両足大体完成"
+  },
+  {
+    "month": 1,
+    "day": 21,
+    "event": "本体大体完成"
+  },
+  {
+    "month": 1,
+    "day": 24,
+    "event": "配線完了"
+  },
+  {
+    "month": 1,
+    "day": 25,
+    "event": "直立、お辞儀成功"
+  },
+  {
+    "month": 1,
+    "day": 27,
+    "event": "不安定ながら歩くことに成功"
+  },
+  {
+    "month": 2,
+    "day": 1,
+    "event": "メイン基板AX-03のCPUが決定, 製作開始"
+  },
+  {
+    "month": 2,
+    "day": 3,
+    "event": "ハードウェア一部変更"
+  },
+  {
+    "month": 2,
+    "day": 13,
+    "event": "YamaX3.0のメイン基板(coord.e作ユニバーサル基板バージョン)完成"
+  },
+  {
+    "month": 2,
+    "day": 15,
+    "event": "ロボコンマガジン３月号のGUGENの記事にY-modifyが掲載される"
+  },
+  {
+    "month": 4,
+    "day": 9,
+    "event": "YamaX3.0のメイン基板(プリント基板バージョン)をSwitchSciencePCBに発注"
+  },
+  {
+    "month": 4,
+    "day": 10,
+    "event": "YamaX3.0の歩行になんとか成功"
+  },
+  {
+    "month": 4,
+    "day": 27,
+    "event": "YamaX3.0のメイン基板(プリント基板バージョン)が届く"
+  },
+  {
+    "month": 5,
+    "day": 3,
+    "event": "YamaX3.0のメイン基板(プリント基板バージョン)の動作チェックが完了"
+  },
+  {
+    "month": 6,
+    "day": 12,
+    "event": "YamaX3.0の歩行を大幅に修正"
+  },
+  {
+    "month": 7,
+    "day": 21,
+    "event": "YamaX3.0のソーラン節を躍らせる"
+  },
+  {
+    "month": 8,
+    "day": 1,
+    "event": "YamaX3.0のPVを作成"
+  },
+  {
+    "month": 9,
+    "day": 11,
+    "event": "時期基板構想開始(Intel Edison使用)"
+  },
+  {
+    "month": 9,
+    "day": 30,
+    "event": "YamaX3.0の3Dモデルを作成"
+  },
+  {
+    "month": 11,
+    "day": 8,
+    "event": "YamaX3.2用の基板を発注"
+  },
+  {
+    "month": 11,
+    "day": 10,
+    "event": "YamaX3.2用のプロトタイプ基板製作開始"
+  },
+  {
+    "month": 11,
+    "day": 12,
+    "event": "モーター制御のライブラリが完成"
+  },
+  {
+    "month": 11,
+    "day": 15,
+    "event": "プロトタイプ基板完成、動作確認"
+  },
+  {
+    "month": 11,
+    "day": 19,
+    "event": "プログラムの移植と音声合成に成功"
+  },
+  {
+    "month": 11,
+    "day": 23,
+    "event": "音声認識と応答に成功"
+  },
+  {
+    "month": 11,
+    "day": 24,
+    "event": "動画撮影、PV作成"
+  },
+  {
+    "month": 11,
+    "day": 25,
+    "event": "YamaX3.2用の基板が届く"
+  },
+  {
+    "month": 11,
+    "day": 26,
+    "event": "GUGENにエントリーする"
+  },
+  {
+    "month": 12,
+    "day": 13,
+    "event": "YamaX3.2の3Dモデルを作成"
+  }
+]

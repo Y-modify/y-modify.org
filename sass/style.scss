@@ -1,25 +1,19 @@
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bower_components/neat/app/assets/stylesheets/neat";
-$fa-font-path:  "/bower_components/font-awesome/fonts";
+$fa-font-path:  "/fonts";
 @import "bower_components/font-awesome/scss/font-awesome";
 @import "bower_components/jquery-colorbox/example2/colorbox";
+
 @import "sass/navigation";
 @import "sass/slider";
+@import "sass/project";
 @import "sass/footer";
-@import url('https://fonts.googleapis.com/css?family=Raleway:200,300|Roboto:300');
+@import "sass/colorbox";
+@import "sass/definitions";
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300|Roboto:300');
 
 $intro-height: 160px;
-$cell-height: 30vw;
-$cell-height-mobile: 40vw;
-$cell-title-size: 3vw;
-$cell-title-size-mobile: 6vw;
-$portfolio-min-width: 25vw;
-$portfolio-image-size: 15vw;
-$portfolio-title-size: 2em;
-$portfolio-title-size-mobile: 1em;
-$project-height: 400px;
-$tablet: new-breakpoint(max-width 850px 4);
-$mobile: new-breakpoint(max-width 500px 4);
 
 *{
   -webkit-appearance: none;
@@ -43,17 +37,31 @@ body{
 }
 
 main{
-  //overflow: hidden;
+  overflow: hidden;
 }
 
 .btn{
-  width: 100px;
-  height: 25px;
+  /*width: 100px;
+  height: 25px;*/
   padding: 10px;
   margin: 5px;
   background-color: #009688;
   color: white;
   cursor: pointer;
+  transition: .3s;
+  display: inline-block;
+  box-shadow:0px 0px 0px 0px #7f8c8d;
+  -moz-box-shadow:0px 0px 0px 0px #7f8c8d;
+  -webkit-box-shadow:0px 0px 0px 0px #7f8c8d;
+  &.disabled{
+    background-color: #7f8c8d;
+  }
+  &:not(.disabled):hover{
+    transform: translate(-3px, -3px);
+    box-shadow:3px 3px 0px 0px #7f8c8d;
+    -moz-box-shadow:3px 3px 0px 0px #7f8c8d;
+    -webkit-box-shadow:3px 3px 0px 0px #7f8c8d;
+  }
 }
 
 .intro{
@@ -82,102 +90,128 @@ main{
   }
 }
 
-.projects{
+.ulist{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  .project{
-    height: $project-height;
-    display: flex;
-    flex-direction: row;
-    &:nth-child(even){
-      flex-direction: row-reverse;
-      @include media($tablet){
-        flex-direction: column;
-      }
-    }
-    @include media($tablet){
-      flex-direction: column;
-      height: auto;
-    }
-    .pimage{
-      overflow: hidden;
-      width: 50%;
-      height: 100%;
-      background-size: cover;
-      background-attachment: fixed;
-      @include media($tablet){
-        width: 100%;
-        height: $project-height / 2;
-        background-attachment: scroll;
-      }
-    }
-    .description{
-      width: 50%;
-      padding: 40px;
-      @include media($tablet){
-        width: 100%;
-        padding: 20px;
-      }
-      h1,h3{
-        font-family: 'Raleway', sans-serif;
-        font-weight: 200;
-        margin: 0;
-      }
-      h3{
-        color: #27ae60;
-      }
-      h1{
-        margin: 10px 0;
-      }
-      .about{
-        margin: 20px 0;
-      }
-    }
-    background: #e7e7e7;
-    &:nth-child(even){
-      background: white;
+}
+
+.history {
+  background-color: #FAFAFA;
+  text-align: center;
+  padding-top: 10px;
+  h3{
+    color: #27ae60;
+  }
+  h1,h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    margin: 0;
+    margin: 5px;
+  }
+}
+
+.tables {
+  border-style: none;
+  border-spacing: 0px;
+  th, td{
+    padding: 10px;
+  }
+  td:first-child{
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: #ECEFF1;
+  }
+}
+
+.tomatobg{
+  background-position: 80% 50% !important;
+  background-size: auto 90% !important;
+}
+
+.pixelated {
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+ */
+  image-rendering: -webkit-optimize-contrast; /* Safari (WebKit) */
+  image-rendering: -moz-crisp-edges;          /* Firefox (Gecko) */
+  image-rendering: -o-crisp-edges;            /* Opera 12.x */
+  image-rendering: pixelated;                 /* Chrome 41+, Opera 29+ (CSS4) */
+}
+
+.members{
+  margin: 30px auto;
+  width: 80%;
+  text-align: center;
+}
+
+.membercard{
+  display: inline-block;
+  line-height: 10px;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 10px;
+  line-height: 80px;
+  padding: 10px;
+  width: 300px;
+  height: 100px;
+  background-color: #ecf0f1;
+  color: #222222;
+  @include media($tablet){
+    margin: 5px;
+    width: 250px;
+  }
+  @include media($mobile){
+    width: 90%;
+  }
+  img{
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+    border-radius: 40px;
+    float: left;
+  }
+}
+
+.memberbox{
+  position: relative;
+  padding: 30px;
+  img{
+    height: 40%;
+    margin-right: 30px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    opacity: 0.5;
+  }
+  .retbutton{
+    border: none;
+    font-size: 15px;
+    &:after{
+      content: " >";
     }
   }
 }
 
-#cboxLoadingGraphic{
-  background:url(/images/loading.gif) no-repeat center center;
+h2 {
+	position: relative;
+	padding-bottom: .5em;
 }
-#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; text-indent:-9999px; width:20px; height:20px; position:absolute; top:-20px; background:url(/images/controls.png) no-repeat 0 0;}
-#cboxOverlay {
-    background: #222;
+h2::before,
+h2::after {
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	content: '';
+	height: 4px;
 }
-#cboxLoadedContent {
-    background: #fff;
+h2::before {
+	z-index: 2;
+	width: 15%;
+	background-color: #444;
 }
-#cboxLoadedContent {
-  padding: 0;
-  overflow: auto;
-    -moz-box-shadow: 0px 1px 10px #000000;
-    -webkit-box-shadow: 0px 1px 10px #000000;
-    box-shadow: 0px 1px 10px #000000;
-}
-#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose , #cboxTitle {
-  top: -30px;
-}
-#colorbox, #cboxOverlay, #cboxWrapper {
-  overflow: visible ;
-}
-#cboxTitle {
-  color: #fff;
-}
-#inline-content {/* インラインを使用する時のみ */
-    margin: 20px;
-}
-#ajax-wrap {/* ajaxを使用する時のみ */
-  margin: 20px;
-}
-
-.back-yamax{
-  background-image: url('/images/back1.jpg');
-}
-
-.back-edison{
-  background-image: url('/images/back2.jpg');
+h2::after {
+	width: 100%;
+	background: -webkit-repeating-linear-gradient(45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
+	background: repeating-linear-gradient(45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
 }

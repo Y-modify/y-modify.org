@@ -1,0 +1,12 @@
+<a class="membercard btn" href="#member-<%= name %>">
+  <img src="/images/members/<%= name %>.png">
+  <%= displayName %>
+</a>
+<div style="display: none;">
+  <section id="member-<%= name %>" class="memberbox">
+    <img src="/images/members/<%= name %>.png">
+    <h2><%= displayName %></h2>
+    <p><%- description.replace(/[\n\r]/g, "<br>"); %></p>
+    <button class="btn retbutton">戻る</button>
+  </section>
+</div>

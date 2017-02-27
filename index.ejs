@@ -20,8 +20,8 @@
       },
       {
         title: "Ozone OS",
-        description: "Debian, CentOS, OpenSUSE, and so on for Intel Edison.",
-        image: "/images/back2.jpg",
+        description: "Bring your favorite distro to the Intel Edison.",
+        image: "/images/ozoneb.jpg",
       },
       {
         title: "Enjoy making.",
@@ -43,50 +43,47 @@
         ハードウェア寄りな人と、 逆にソフトウェア寄りな人とが集まって、 より「面白い」ものを作るべく日々議論を重ねています。
       </div>
     </div>
-    <ul class="projects">
-      <li class="project">
-        <div class="pimage scroll-animation back-yamax"></div>
-        <div class="description">
-          <h3>
-            A Humanoid Robot
-          </h3>
-          <h1>
-            YamaX
-          </h1>
-          <div class="about">
-            YamaXは、Intel Edisonを使用した2足歩行ロボットです。<br>
-            内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。<br>
-            <ul>
-              <li>シンプルな構成</li>
-              <li>用意されたアクション</li>
-              <li>汎用linux</li>
-            </ul>
-          </div>
-          <a class="btn youtube" href="https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1">Watch video</a>
-          <a class="btn">Learn more</a>
-        </div>
-      </li>
-      <li class="project">
-        <div class="pimage scroll-animation back-edison"></div>
-        <div class="description">
-          <h3>
-            Embedded OS for Intel Edison
-          </h3>
-          <h1>
-            Ozone OS
-          </h1>
-          <div class="about">
-            YamaXは、Intel Edisonを使用した2足歩行ロボットです。<br>
-            内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。<br>
-            <ul>
-              <li>シンプルな構成</li>
-              <li>用意されたアクション</li>
-              <li>汎用linux</li>
-            </ul>
-          </div>
-          <a class="btn">Watch video</a> <a class="btn">Learn more</a>
-        </div>
-      </li>
+    <ul class="ulist">
+      <%- include("ejs/_project", {
+        title: "YamaX",
+        subtitle: "A Humanoid Robot",
+        background: "/images/back1.jpg",
+        about: "YamaXは、Intel Edisonを使用した2足歩行ロボットです。\n内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。\n",
+        points: ["シンプルな構成", "用意されたアクション", "汎用linux"],
+        buttons: [{
+          string: "Watch video",
+          href: "https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1",
+          className: "youtube",
+        },{
+          string: "Learn more",
+          href: "/yamax/",
+        },],
+      }) %>
+      <%- include("ejs/_project", {
+        title: "Flixa",
+        subtitle: "X-Platform game library",
+        background: "/images/flixa.png",
+        about: "'Float, Flat, Flexible'\nどんな環境でも軽快に動くゲームライブラリです。\n",
+        points: ["組み込みに対応", "多数の対応言語", "オープンソース"],
+        buttons: [{
+          string: "Coming soon",
+          className: "disabled",
+        },],
+      }) %>
+      <%- include("ejs/_project", {
+        title: "Ozone OS",
+        subtitle: "Alternative OSs for Intel Edison",
+        background: "/images/ozoneb.jpg",
+        about: "Intel Edisonのための使いやすいDebianやCentOSです。\n使い慣れた環境で簡単にEdisonを使うことができるようになります。\n",
+        points: ["Debian, CentOS, Fedora", "順次OS追加予定", "オープン"],
+        buttons: [{
+          string: "Website",
+          href: "/ozone/",
+        },{
+          string: "Download now",
+          href: "/ozone/download",
+        },],
+      }) %>
     </ul>
   </main>
   <%- include("ejs/common/_footer") %>

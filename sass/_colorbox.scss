@@ -1,0 +1,32 @@
+#cboxLoadingGraphic{
+  background:url(/images/loading.gif) no-repeat center center;
+}
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; text-indent:-9999px; width:20px; height:20px; position:absolute; top:-20px; background:url(/images/controls.png) no-repeat 0 0;}
+#cboxOverlay {
+    background: #222;
+}
+#cboxLoadedContent {
+    background: #fff;
+}
+#cboxLoadedContent {
+  padding: 0;
+  overflow: auto;
+    -moz-box-shadow: 0px 1px 10px #000000;
+    -webkit-box-shadow: 0px 1px 10px #000000;
+    box-shadow: 0px 1px 10px #000000;
+}
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose , #cboxTitle {
+  top: -30px;
+}
+#colorbox, #cboxOverlay, #cboxWrapper {
+  overflow: visible ;
+}
+#cboxTitle {
+  color: #fff;
+}
+#inline-content {/* インラインを使用する時のみ */
+    margin: 20px;
+}
+#ajax-wrap {/* ajaxを使用する時のみ */
+  margin: 20px;
+}

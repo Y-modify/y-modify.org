@@ -23,7 +23,8 @@
     "font-awesome": "fontawesome#^4.6.3",
     "Flowtype.js": "flowtype#^1.1.0",
     "flexibility": "^2.0.1",
-    "jquery-colorbox": "colorbox#^1.6.4"
+    "jquery-colorbox": "colorbox#^1.6.4",
+    "i18next": "^4.2.0"
   },
   "devDependencies": {
     "html5shiv": "^3.7.3"

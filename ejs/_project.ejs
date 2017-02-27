@@ -1,0 +1,27 @@
+<li class="herounit">
+  <div class="image scroll-animation" style="background-image: url('<%= background %>');"></div>
+  <div class="description">
+    <h3>
+      <%= subtitle %>
+    </h3>
+    <h1>
+      <%= title %>
+    </h1>
+    <div class="about">
+      <%- about.replace(/[\n\r]/g, "<br>"); %>
+      <ul>
+        <% points.forEach(function (value) { %>
+        <li><%= value %></li>
+        <% }); %>
+      </ul>
+    </div>
+    <% buttons.forEach(function (value) { %>
+    <a class="btn
+      <% if(typeof(value.className)!='undefined'){ %>
+        <%= value.className %>
+      <% } %>
+    " href="<%= value.href %>"
+    ><%= value.string %></a>
+    <% }); %>
+  </div>
+</li>
