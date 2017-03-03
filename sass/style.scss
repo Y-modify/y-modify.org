@@ -41,8 +41,12 @@ main{
 }
 
 .btn{
-  /*width: 100px;
-  height: 25px;*/
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  border: none;
   padding: 10px;
   margin: 5px;
   background-color: #009688;
@@ -185,7 +189,6 @@ main{
     opacity: 0.5;
   }
   .retbutton{
-    border: none;
     font-size: 15px;
     &:after{
       content: " >";
