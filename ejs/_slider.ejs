@@ -1,9 +1,9 @@
 <div class="slider">
-  <div class="swiper-container" id="swiper-letters">
+  <div class="swiper-container slider--container" id="slider--letters">
     <div class="swiper-wrapper">
       <% items.forEach(function (value, key) { %>
-      <div class="swiper-slide">
-        <div class="swiper-letters-box">
+      <div class="swiper-slide slider--slide">
+        <div class="slider--lettersbox">
           <h1><%= value.title %></h1>
           <%= value.description %>
         </div>
@@ -12,10 +12,10 @@
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  <div class="swiper-container" id="swiper-images">
+  <div class="swiper-container slider--container" id="slider--images">
     <div class="swiper-wrapper">
       <% items.forEach(function (value, key) { %>
-        <div class="swiper-slide" style="background-image: url('<%= value.image %>');"></div>
+        <div class="swiper-slide slider--slide" style="background-image: url('<%= value.image %>');"></div>
       <% }); %>
     </div>
   </div>
