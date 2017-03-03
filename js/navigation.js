@@ -6,20 +6,20 @@ $(window).resize(function() {
     let moreLeftSideToPageRightSide = windowWidth - moreLeftSideToPageLeftSide;
 
     if (moreLeftSideToPageRightSide < 330) {
-      $("#js-navigation-more .submenu .submenu").removeClass("fly-out-right");
-      $("#js-navigation-more .submenu .submenu").addClass("fly-out-left");
+      $("#js-navigation-more .navigation--menu__submenu .navigation--menu__submenu").removeClass("fly-out-right");
+      $("#js-navigation-more .navigation--menu__submenu .navigation--menu__submenu").addClass("fly-out-left");
     }
 
     if (moreLeftSideToPageRightSide > 330) {
-      $("#js-navigation-more .submenu .submenu").removeClass("fly-out-left");
-      $("#js-navigation-more .submenu .submenu").addClass("fly-out-right");
+      $("#js-navigation-more .navigation--menu__submenu .navigation--menu__submenu").removeClass("fly-out-left");
+      $("#js-navigation-more .navigation--menu__submenu .navigation--menu__submenu").addClass("fly-out-right");
     }
   }
 });
 
 $(document).ready(function() {
   let menuToggle = $("#js-mobile-menu").unbind();
-  $("#js-navigation-menu").removeClass("show");
+  $("#js-navigation-menu").removeClass("navigation--menu__show");
 
   menuToggle.on("click", function(e) {
     e.preventDefault();
