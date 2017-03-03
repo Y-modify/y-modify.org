@@ -1,13 +1,13 @@
 <li class="herounit">
-  <div class="image scroll-animation" style="background-image: url('<%= background %>');"></div>
-  <div class="description">
+  <div class="herounit--image js-scroll-animation" style="background-image: url('<%= background %>');"></div>
+  <div class="herounit--description">
     <h3>
       <%= subtitle %>
     </h3>
     <h1>
       <%= title %>
     </h1>
-    <div class="about">
+    <div class="herounit--about">
       <%- about.replace(/[\n\r]/g, "<br>"); %>
       <ul>
         <% points.forEach(function (value) { %>

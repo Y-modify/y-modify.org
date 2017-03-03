@@ -1,15 +1,15 @@
 $(function(){
-  $('.description').flowtype({maxFont: 16});
-  $('.about').flowtype({maxFont: 20});
-  $('.swiper-letters-box').flowtype({minFont: 20});
+  $('.herounit--description').flowtype({maxFont: 16});
+  $('.herounit--about').flowtype({maxFont: 20});
+  $('.slider--lettersbox').flowtype({minFont: 20});
 
-  let imswiper = new Swiper ('#swiper-images', {
+  let imswiper = new Swiper ('#slider--images', {
     speed: 600,
     initialSlide: 0,
     effect: 'fade',
     loop: true
   });
-  let leswiper = new Swiper ('#swiper-letters', {
+  let leswiper = new Swiper ('#slider--letters', {
     pagination: '.swiper-pagination',
     speed: 600,
     initialSlide: 0,
@@ -26,16 +26,16 @@ $(function(){
     });
   }
 
-  $(".scroll-animation").addClass('js-fade-element-hide');
+  $(".js-scroll-animation").addClass('js-fade-element-hide');
 
-  $('.retbutton').click(function(){
+  $('.js-retbutton').click(function(){
     parent.$.fn.colorbox.close(); return false;
   });
 
-  showScroll();
+  showScroll(".js-scroll-animation");
 
   $(window).scroll(function() {
-    showScroll();
+    showScroll(".js-scroll-animation");
   });
 
   setCBoxSize(".youtube", window.innerWidth * 0.7, window.innerWidth * 0.7 * (720/1280), false, true);
@@ -57,8 +57,8 @@ $(function(){
   });
 });
 
-function showScroll(){
-  $(".scroll-animation").each(function(index, element){
+function showScroll(elm){
+  $(elm).each(function(index, element){
     if( $(element).length > 0 ) {
       const elementTopToPageTop = $(element).offset().top;
       const windowTopToPageTop = $(window).scrollTop();

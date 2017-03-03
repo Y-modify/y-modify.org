@@ -2,7 +2,7 @@
 @import "bower_components/neat/app/assets/stylesheets/neat";
 @import "sass/animations";
 
-header.navigation {
+.navigation {
   $base-border-color: transparent !default;
   $base-border-radius: 0px !default;
   $action-color: #477DCA !default;
@@ -45,13 +45,13 @@ header.navigation {
     }
   }
 
-  .navigation-wrapper {
+  &--wrapper {
     @include clearfix;
     position: relative;
     z-index: 9999;
   }
 
-  .logo {
+  &--logo {
     float: left;
     max-height: $navigation-height;
     padding-left: $navigation-padding-horizontal;
@@ -68,7 +68,7 @@ header.navigation {
 
   // Mobile view
 
-  .navigation-menu-button {
+  &--button {
     color: $navigation-color;
     display: block;
     float: right;
@@ -101,7 +101,7 @@ header.navigation {
     }
   }
 
-  nav > ul li.nav-link > a{
+  nav > &--menu &--link > a{
     &:focus,
     &:hover {
       color: lighten($navigation-color, 15);
@@ -109,7 +109,7 @@ header.navigation {
     }
   }
 
-  ul.navigation-menu {
+  &--menu {
     clear: both;
     display: none;
     margin: 0 auto;
@@ -118,7 +118,7 @@ header.navigation {
     width: 100%;
     z-index: 9999;
 
-    &.show {
+    &__show {
       display: block;
     }
 
@@ -131,7 +131,7 @@ header.navigation {
 
   // The nav items
 
-  ul li.nav-link {
+  ul li.navigation--link {
     background: $navigation-background;
     display: block;
     line-height: $navigation-height;
@@ -171,7 +171,7 @@ header.navigation {
   }
 
   // Sub menus
-  li.more.nav-link {
+  li.navigation--link__more.navigation--link {
     padding-right: 0;
 
     @include media($horizontal-bar-mode) {
@@ -201,7 +201,7 @@ header.navigation {
     }
   }
 
-  li.more {
+  li.navigation--link__more {
     overflow: visible;
     padding-right: 0;
 
@@ -225,8 +225,8 @@ header.navigation {
       }
     }
 
-    &:focus > .submenu,
-    &:hover > .submenu {
+    &:focus > .navigation--menu__submenu,
+    &:hover > .navigation--menu__submenu {
       display: block;
       opacity: 1;
       @include setAnimation($name: fadeIn, $duration: 150ms, $count: 1);
@@ -238,7 +238,7 @@ header.navigation {
     }
   }
 
-  ul.submenu {
+  ul.navigation--menu__submenu {
     display: none;
     opacity: 0;
     padding-left: 0;
@@ -250,21 +250,21 @@ header.navigation {
       top: 1.5em;
     }
 
-    .submenu.fly-out-right {
+    .navigation--menu__submenu.js-fly-out-right {
       @include media($horizontal-bar-mode) {
         left: $navigation-submenu-width - 0.2em;
         top: 0;
       }
     }
 
-    .submenu.fly-out-left {
+    .navigation--menu__submenu.js-fly-out-left {
       @include media($horizontal-bar-mode) {
         left: -$navigation-submenu-width + 0.2em;
         top: 0;
       }
     }
 
-    .submenu {
+    .navigation--menu__submenu {
       @include media($horizontal-bar-mode) {
         left: $navigation-submenu-width - 0.2em;
         top: 0;
@@ -308,7 +308,7 @@ header.navigation {
 
   // Elements on the far right
 
-  .navigation-tools {
+  .navigation--tools {
     background: #505050;
     clear: both;
     display: block;
@@ -323,7 +323,7 @@ header.navigation {
 
   // Search bar
 
-  .search-bar {
+  .searchbar {
     $search-bar-border-color: $base-border-color;
     $search-bar-border: 1px solid $search-bar-border-color;
     $search-bar-background: lighten($search-bar-border-color, 10%);
@@ -384,7 +384,7 @@ header.navigation {
     }
   }
 
-  .search-bar-right{
+  .searchbar__right{
     float: right;
     padding: 0;
     line-height: normal;

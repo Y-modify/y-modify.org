@@ -8,16 +8,16 @@ $slider-height: calc(90vh - 80px);
   height: $slider-height;
 }
 
-.swiper-container{
+.slider--container{
   height: $slider-height;
 }
 
-#swiper-letters{
+#slider--letters{
   position: absolute;
   width: 100%;
-  .swiper-slide{
+  .slider--slide{
     color: white;
-    .swiper-letters-box{
+    .slider--lettersbox{
       h1{
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
@@ -33,9 +33,9 @@ $slider-height: calc(90vh - 80px);
   }
 }
 
-#swiper-images{
+#slider--images{
   z-index: -1;
-  .swiper-slide{
+  .slider--slide{
     background-size: cover;
     //background-attachment: fixed;
   }
