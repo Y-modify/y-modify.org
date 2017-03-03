@@ -1,7 +1,7 @@
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bower_components/neat/app/assets/stylesheets/neat";
 
-.footer-2 {
+.footer {
   $base-spacing: 1.5em !default;
   $action-color: #477DCA !default;
   $medium-screen: 40em !default;
@@ -16,18 +16,16 @@
   padding: $base-spacing;
   width: 100%;
 
-  .footer-logo {
+  &--logo {
     margin-bottom: 1em;
     margin-right: 1em;
-
+    img {
+      height: 1.6em;
+    }
     @include media($large-screen) {
       float: left;
       margin-bottom: 0;
     }
-  }
-
-  .footer-logo img {
-    height: 1.6em;
   }
 
   ul {
@@ -63,7 +61,7 @@
     }
   }
 
-  .footer-secondary-links {
+  &--links {
     @include media($large-screen) {
       float: right;
     }
@@ -72,7 +70,7 @@
       font-size: 0.8em;
     }
 
-    ul.footer-social {
+    &--social {
       margin: 1em 0 0 0;
 
       @include media($large-screen) {
