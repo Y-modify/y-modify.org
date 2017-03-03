@@ -250,14 +250,14 @@
       top: 1.5em;
     }
 
-    .navigation--menu__submenu.fly-out-right {
+    .navigation--menu__submenu.js-fly-out-right {
       @include media($horizontal-bar-mode) {
         left: $navigation-submenu-width - 0.2em;
         top: 0;
       }
     }
 
-    .navigation--menu__submenu.fly-out-left {
+    .navigation--menu__submenu.js-fly-out-left {
       @include media($horizontal-bar-mode) {
         left: -$navigation-submenu-width + 0.2em;
         top: 0;

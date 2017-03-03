@@ -26,16 +26,16 @@ $(function(){
     });
   }
 
-  $(".herounit--image__animation").addClass('js-fade-element-hide');
+  $(".js-scroll-animation").addClass('js-fade-element-hide');
 
-  $('.retbutton').click(function(){
+  $('.js-retbutton').click(function(){
     parent.$.fn.colorbox.close(); return false;
   });
 
-  showScroll(".herounit--image__animation");
+  showScroll(".js-scroll-animation");
 
   $(window).scroll(function() {
-    showScroll(".herounit--image__animation");
+    showScroll(".js-scroll-animation");
   });
 
   setCBoxSize(".youtube", window.innerWidth * 0.7, window.innerWidth * 0.7 * (720/1280), false, true);
