@@ -26,6 +26,19 @@ $(function(){
     });
   }
 
+  $('a').click(function() {//smooth scroll
+      const speed = 400;
+      let href= $(this).attr("href");
+      if(href.split("#").length === 1)//そもそも#がなかったら
+        return true;
+      let url = href.split("#")[0];
+      if(url != window.location.pathname && url != window.location.pathname+"/")//現在のページではなかったら
+        return true;
+      let position = $(('#'+(href.split("#")[1]))).offset().top;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+
   $(".js-scroll-animation").addClass('js-fade-element-hide');
 
   $('.js-retbutton').click(function(){
