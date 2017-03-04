@@ -1,0 +1,110 @@
+*{
+  -webkit-appearance: none;
+}
+
+ul{
+  list-style-type: disc;
+}
+
+a{
+  text-decoration: none;
+  @include transition(all 300ms 0ms ease);
+}
+
+body{
+  background-color: desaturate(darken(#477DCA, 20%), 30%);
+  color: rgb(44, 62, 80);
+  font-size: 16px;
+  font-family: 'Roboto', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, sans-serif;
+  margin: 0;
+}
+
+main{
+  overflow: hidden;
+}
+
+.btn{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  background-color: #009688;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  display: inline-block;
+  box-shadow:0px 0px 0px 0px #7f8c8d;
+  -moz-box-shadow:0px 0px 0px 0px #7f8c8d;
+  -webkit-box-shadow:0px 0px 0px 0px #7f8c8d;
+  &.disabled{
+    background-color: #7f8c8d;
+    cursor: default;
+  }
+  &:not(.disabled):hover{
+    transform: translate(-3px, -3px);
+    box-shadow:3px 3px 0px 0px #7f8c8d;
+    -moz-box-shadow:3px 3px 0px 0px #7f8c8d;
+    -webkit-box-shadow:3px 3px 0px 0px #7f8c8d;
+  }
+}
+
+.intro{
+  width: 100%;
+  height: $intro-height;
+  background: white;
+  text-align: center;
+  .socials{
+    width: 33%;
+    height: $intro-height / 2;
+    line-height: $intro-height / 2;
+    @include outer-container;
+    a{
+      color: #95a5a6;
+      @include span-columns(2);
+    }
+    a:hover{
+      color: #34495e;
+    }
+    @include media($tablet) {
+      width: 60%;
+    }
+    @include media($mobile) {
+      width: 80%;
+    }
+  }
+}
+
+.pixelated {
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+ */
+  image-rendering: -webkit-optimize-contrast; /* Safari (WebKit) */
+  image-rendering: -moz-crisp-edges;          /* Firefox (Gecko) */
+  image-rendering: -o-crisp-edges;            /* Opera 12.x */
+  image-rendering: pixelated;                 /* Chrome 41+, Opera 29+ (CSS4) */
+}
+
+h2 {
+	position: relative;
+	padding-bottom: .5em;
+}
+h2::before,
+h2::after {
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	content: '';
+	height: 4px;
+}
+h2::before {
+	z-index: 2;
+	width: 15%;
+	background-color: #444;
+}
+h2::after {
+	width: 100%;
+	background: -webkit-repeating-linear-gradient(45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
+	background: repeating-linear-gradient(45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
+}

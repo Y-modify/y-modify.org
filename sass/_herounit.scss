@@ -1,6 +1,13 @@
-@import "sass/definitions";
+.ulist{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-$unit-height: 400px;
+.tomatobg{
+  background-position: 80% 50% !important;
+  background-size: auto 90% !important;
+}
 
 .herounit{
   height: $unit-height;

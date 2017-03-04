@@ -1,0 +1,27 @@
+.history {
+  background-color: #FAFAFA;
+  text-align: center;
+  padding-top: 10px;
+  h3{
+    color: #27ae60;
+  }
+  h1,h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    margin: 0;
+    margin: 5px;
+  }
+  &--table {
+    border-style: none;
+    border-spacing: 0px;
+    th, td{
+      padding: 10px;
+    }
+    td:first-child{
+      text-align: center;
+    }
+    tr:nth-child(even) {
+      background-color: #ECEFF1;
+    }
+  }
+}

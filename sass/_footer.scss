@@ -1,19 +1,7 @@
-@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "bower_components/neat/app/assets/stylesheets/neat";
-
-.footer {
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $medium-screen: 40em !default;
-  $large-screen: 53.75em !default;
-  $footer-background: desaturate(darken($action-color, 20%), 30%);
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
+.footer {  
   background: $footer-background;
   display: inline-block;
-  padding: $base-spacing;
+  padding: $footer-base-spacing;
   width: 100%;
 
   &--logo {
