@@ -1,0 +1,16 @@
+{
+	"A Humanoid for Hobby": "趣味のヒューマノイド",
+	"Bring your favorite distro to the Intel Edison": "お気に入りのOSを、Edisonに",
+	"We are just doing our hobbies like jobs, but it's not jobs.": "私達は仕事のように趣味をしているだけで、あくまでそれは趣味なのです",
+	"YamaX is humanoid embedded Intel Edison.\n          It can perform voice recognition, speaking, remote control, etc...": "YamaXはIntel Edisonを内蔵したヒューマノイドロボットです。\n内蔵linuxを活用して音声認識、音声合成、遠隔操作などができます。",
+	"Simplicated constructure": "シンプルな構成",
+	"Pre-loaded actions": "用意されたアクション",
+	"Linux for General purpose": "汎用linux",
+	"'Float, Flat, Flexible'\nGaming library for every platform\n": "'Float, Flat, Flexible'\nどんな環境にも、軽快なゲーミングライブラリを\n",
+	"Embedded environment supported": "組み込みに対応",
+	"Can be used in many languages": "多数の対応言語",
+	"Open source (Why not!)": "オープンソース",
+	"Useful alternative OSs for Intel Edison.\nEnjoy Intel Edison in familiar environment\n": "Intel EdisonのためのOSです。\n慣れ親しんだ環境でEdisonを。\n",
+	"Another OS will be added": "順次OS追加予定",
+	"Open source (Why not again)": "オープン"
+}

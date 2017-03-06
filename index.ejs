@@ -15,17 +15,17 @@
     <%- include("ejs/_slider", { items: [
       {
         title: "YamaX",
-        description: "A Humanoid for Hobby",
+        description: t("A Humanoid for Hobby"),
         image: "/images/back3.jpg",
       },
       {
         title: "Ozone OS",
-        description: "Bring your favorite distro to the Intel Edison.",
+        description: t("Bring your favorite distro to the Intel Edison"),
         image: "/images/ozoneb.jpg",
       },
       {
         title: "Enjoy making.",
-        description: "We are just doing our hobbies like jobs, but it's not jobs.",
+        description: t("We are just doing our hobbies like jobs, but it's not jobs."),
         image: "/images/back1.jpg",
       }
       ]}) %>
@@ -48,8 +48,9 @@
         title: "YamaX",
         subtitle: "A Humanoid Robot",
         background: "/images/back1.jpg",
-        about: "YamaXは、Intel Edisonを使用した2足歩行ロボットです。\n内蔵linuxを活用して音声認識、音声合成、遠隔操作等が可能です。\n",
-        points: ["シンプルな構成", "用意されたアクション", "汎用linux"],
+        about: t(`YamaX is humanoid embedded Intel Edison.
+          It can perform voice recognition, speaking, remote control, etc...`),
+        points: [t("Simplicated constructure"), t("Pre-loaded actions"), t("Linux for General purpose")],
         buttons: [{
           string: "Watch video",
           href: "https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1",
@@ -64,8 +65,8 @@
         title: "Flixa",
         subtitle: "X-Platform game library",
         background: "/images/flixa.png",
-        about: "'Float, Flat, Flexible'\nどんな環境でも軽快に動くゲームライブラリです。\n",
-        points: ["組み込みに対応", "多数の対応言語", "オープンソース"],
+        about: t("'Float, Flat, Flexible'\nGaming library for every platform\n"),
+        points: [t("Embedded environment supported"), t("Can be used in many languages"), t("Open source (Why not!)")],
         buttons: [{
           string: "Coming soon",
           className: "disabled",
@@ -75,8 +76,8 @@
         title: "Ozone OS",
         subtitle: "Alternative OSs for Intel Edison",
         background: "/images/ozoneb.jpg",
-        about: "Intel Edisonのための使いやすいDebianやCentOSです。\n使い慣れた環境で簡単にEdisonを使うことができるようになります。\n",
-        points: ["Debian, CentOS, Fedora", "順次OS追加予定", "オープン"],
+        about: t("Useful alternative OSs for Intel Edison.\nEnjoy Intel Edison in familiar environment\n"),
+        points: ["Debian, CentOS, Fedora", t("Another OS will be added"), t("Open source (Why not again)")],
         buttons: [{
           string: "Website",
           href: "/ozone/",
