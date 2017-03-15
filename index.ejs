@@ -3,7 +3,7 @@
 <%- include("ejs/common/_head", {
   title: "Y-modify",
   url: "www.y-modify.org",
-  imageurl: "images/yop.png",
+  imageurl: "/images/logo_250dpi.png",
   sitename: "Y-modify",
   description: "yahahahaha",
   twitter: "@ymodify314",
@@ -15,17 +15,17 @@
     <%- include("ejs/_slider", { items: [
       {
         title: "YamaX",
-        description: t("A Humanoid for Hobby"),
+        description: t("slider-humanoid"),
         image: "/images/back3.jpg",
       },
       {
         title: "Ozone OS",
-        description: t("Bring your favorite distro to the Intel Edison"),
+        description: t("slider-ozone"),
         image: "/images/ozoneb.jpg",
       },
       {
         title: "Enjoy making.",
-        description: t("We are just doing our hobbies like jobs, but it's not jobs."),
+        description: t("slider-job"),
         image: "/images/back1.jpg",
       }
       ]}) %>
@@ -39,8 +39,7 @@
         <a href="https://www.youtube.com/channel/UCnDs9Rdml-Z_bYAn3CSBxeg" target="_blank"><i class="fa fa-youtube-play"></i></a>
       </div>
       <div class="description">
-        Y-modifyは、中学生ならではの視点でモノを作っているチームです。<br>
-        ハードウェア寄りな人と、 逆にソフトウェア寄りな人とが集まって、 より「面白い」ものを作るべく日々議論を重ねています。
+        <%- t("ymodify-desc") %>
       </div>
     </div>
     <ul class="ulist">
@@ -48,9 +47,8 @@
         title: "YamaX",
         subtitle: "A Humanoid Robot",
         background: "/images/back1.jpg",
-        about: t(`YamaX is humanoid embedded Intel Edison.
-          It can perform voice recognition, speaking, remote control, etc...`),
-        points: [t("Simplicated constructure"), t("Pre-loaded actions"), t("Linux for General purpose")],
+        about: t("top-yamax"),
+        points: [t("top-yamax-structure"), t("top-yamax-actions"), t("top-yamax-linux")],
         buttons: [{
           string: "Watch video",
           href: "https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1",
@@ -63,10 +61,10 @@
       <%- include("ejs/_herounit", {
         idName: "flixa",
         title: "Flixa",
-        subtitle: "X-Platform game library",
+        subtitle: "X-Platform Gaming Toolkit",
         background: "/images/flixa.png",
-        about: t("'Float, Flat, Flexible'\nGaming library for every platform\n"),
-        points: [t("Embedded environment supported"), t("Can be used in many languages"), t("Open source (Why not!)")],
+        about: t("top-flixa"),
+        points: [t("top-flixa-embed"), t("top-flixa-lang"), t("top-flixa-open")],
         buttons: [{
           string: "Coming soon",
           className: "disabled",
@@ -76,8 +74,8 @@
         title: "Ozone OS",
         subtitle: "Alternative OSs for Intel Edison",
         background: "/images/ozoneb.jpg",
-        about: t("Useful alternative OSs for Intel Edison.\nEnjoy Intel Edison in familiar environment\n"),
-        points: ["Debian, CentOS, Fedora", t("Another OS will be added"), t("Open source (Why not again)")],
+        about: t("top-ozone"),
+        points: ["Debian, CentOS, Fedora", t("top-ozone-another"), t("top-ozone-open")],
         buttons: [{
           string: "Website",
           href: "/ozone/",

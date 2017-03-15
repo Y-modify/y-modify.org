@@ -15,14 +15,14 @@
     <ul class="ulist">
       <%- include("../ejs/_hero", {
         title: "YamaX",
-        subtitle: "a humanoid robot",
+        subtitle: t("slider-humanoid"),
         background: "/images/3dm.png",
       }) %>
       <%- include("../ejs/_herounit", {
-        title: "Moving",
+        title: t("yamax-moving"),
         subtitle: "A Neat System",
         background: "/images/leg.jpg",
-        about: "すべてベタ書きで書かれた歩行プログラム。\n何度も検証を繰り返し、ついに歩行に成功しました。\n製作期間は数か月にも及びます。\n",
+        about: t("yamax-moving-desc"),
         points: [],
         buttons: [{
           string: "Watch video",
@@ -34,10 +34,10 @@
         },],
       }) %>
       <%- include("../ejs/_herounit", {
-        title: "Voice Control",
+        title: t("yamax-voicecontrol"),
         subtitle: "with Embedded Linux",
         background: "/images/back2.jpg",
-        about: "YamaXは基板にIntel Edisonを搭載しています。\nIntel Edisonに内蔵されたlinuxを活用して、\n音声認識、音声合成、遠隔操作等が可能です。\n",
+        about: t("yamax-voicecontrol-desc"),
         points: [],
         buttons: [{
           string: "Watch video",
@@ -45,10 +45,10 @@
         },],
       }) %>
       <%- include("../ejs/_herounit", {
-        title: "Structure",
+        title: t("yamax-structure"),
         subtitle: "All-in Handmade",
         background: "/images/3dm.png",
-        about: "サーボモータのフレームから制御基板まで、ほとんどが手作りです。\n計算された形とプログラム。私たちにしか作れないロボットがここにあります。\n",
+        about: t("yamax-structure-desc"),
         points: [],
         buttons: [{
           string: "View 3D Data",
@@ -60,7 +60,7 @@
       }) %>
       <%- include("../ejs/_history", {
         data: history,
-        title: "History of YamaX",
+        title: t("yamax-history"),
         subtitle: "a very long",
       }) %>
     </ul>

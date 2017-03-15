@@ -32,6 +32,7 @@
     "i18n": "^0.8.3",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-pngquant": "^5.0.0",
-    "main-bower-files": "^2.13.1"
+    "main-bower-files": "^2.13.1",
+    "rimraf": "^2.6.1"
   }
 }

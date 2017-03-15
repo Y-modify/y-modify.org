@@ -29,38 +29,30 @@
           <a href="https://www.youtube.com/channel/UCnDs9Rdml-Z_bYAn3CSBxeg" target="_blank"><i class="fa fa-youtube-play"></i></a>
         </div>
         <div class="description">
-          Y-modifyは、中学生ならではの視点でモノを作っているチームです。<br>
-          ハードウェア寄りな人と、 逆にソフトウェア寄りな人とが集まって、 より「面白い」ものを作るべく日々議論を重ねています。
+          <%- t("ymodify-desc") %>
         </div>
       </div>
       <%- include("../ejs/_herounit", {
-        title: "ワクワクを作れ。",
-        subtitle: "Create the excitement.",
+        title: t("about-excite"),
+        subtitle: "Our most important policy",
         background: "/images/create_excite.JPG",
-        about: `電源を入れる直前、そこが一番おもしろい。
-                すべては完全動作の喜び、ワクワクのために、
-                私達は作る側も作られる側もワクワクするようなものを作っていきます。`,
+        about: t("about-excite-desc"),
         points: [],
         buttons: [],
       }) %>
       <%- include("../ejs/_herounit", {
-        title: "平常心=クレイジー",
-        subtitle: "Always be crazy.",
+        title: t("about-crazy"),
+        subtitle: "Ideas will be made in excitement",
         background: "/images/be_crazy.JPG",
-        about: `発狂とまでは行かないけれど、常にハイテンションで。
-                どんなアイデアも、下を向いていては生まれない。
-                遊び心に始まり、遊び心に終わる工作。
-                楽しむ、そして「遊ぶ」のを最優先にしています。`,
+        about: t("about-crazy-desc"),
         points: [],
         buttons: [],
       }) %>
       <%- include("../ejs/_herounit", {
-        title: "プロトタイプは永遠に。",
-        subtitle: "Forever prototypes.",
+        title: t("about-prototypes"),
+        subtitle: "Never lost your goal",
         background: "/images/forever_proto.JPG",
-        about: `完璧は追っても追っても逃げていく。
-                試作品のまま、どこまでも完璧に近づけていく。
-                時間を忘れて限界を追う、そんな工作って良くないですか。`,
+        about: t("about-prototypes-desc"),
         points: [],
         buttons: [],
       }) %>

@@ -29,11 +29,23 @@ $(function(){
   $('a').click(function() {//smooth scroll
       const speed = 400;
       let href= $(this).attr("href");
-      if(href.split("#").length === 1)//そもそも#がなかったら
+      if(href.startsWith("http"))//絶対パス
         return true;
-      let url = href.split("#")[0];
-      if(url != window.location.pathname && url != window.location.pathname+"/")//現在のページではなかったら
+      if(href.startsWith("#"))//やめろ
         return true;
+      let lang = window.location.href.split("/")[3];//URLから言語を取得
+      if(lang.length != 2){//国じゃない
+        return true;
+      }
+      if(href.split("#").length === 1){//そもそも#がなかったら
+        location.href = "/"+lang+href;
+        return false;
+      }
+      let url = "/"+lang+href.split("#")[0];
+      if(url != window.location.pathname && url != window.location.pathname+"/"){//現在のページではなかったら
+        location.href = "/"+lang+href;
+        return false;
+      }
       let position = $(('#'+(href.split("#")[1]))).offset().top;
       $('body,html').animate({scrollTop:position}, speed, 'swing');
       return false;

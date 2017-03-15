@@ -1,0 +1,40 @@
+<?php
+$keyname = "LANG";
+if (isset($_COOKIE[$keyname])){
+  $lang = $_COOKIE[$keyname];
+  $url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://').$_SERVER["HTTP_HOST"]."/".$lang;
+  header("Location: {$url}");
+  exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<%- include("../../ejs/common/_head", {
+  title: "Y-modify",
+  url: "www.y-modify.org",
+  imageurl: "images/yop.png",
+  sitename: "Y-modify",
+  description: "yahahahaha",
+  twitter: "@ymodify314",
+  keywords: "電子工作,YamaX,ヒューマノイド"
+}) %>
+<body>
+  <%- include("../../ejs/common/_header") %>
+  <main role="main">
+    <div class="errorarea">
+      <h1>Select Language</h1>
+      <span class="errorarea--message">I'm sorry, but your language
+      <?php
+        if(array_key_exists("hl", $_GET))
+          print " (".locale_get_display_region($_GET["hl"], 'en').")";
+      ?> may not be supported yet.</span>
+      <div class="errorarea--languages">
+        <a class="errorarea--language btn" id="errorarea--english" href="/en">English</a>
+        <a class="errorarea--language btn" id="errorarea--japanese" href="/ja">日本語</a>
+      </div>
+    </div>
+  </main>
+  <%- include("../../ejs/common/_footer") %>
+  <%- include("../../ejs/common/_scripts") %>
+</body>
+</html>
