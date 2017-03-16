@@ -1,4 +1,4 @@
-.footer {  
+.footer {
   background: $footer-background;
   display: inline-block;
   padding: $footer-base-spacing;
@@ -32,6 +32,7 @@
   ul li {
     list-style: none;
     padding-right: 1em;
+    color: $footer-link-color;
 
     @include media($large-screen) {
       display: inline;
@@ -40,8 +41,8 @@
   }
 
   ul li a {
-    color: $footer-link-color;
     text-decoration: none;
+    color: $footer-link-color;
 
     &:focus,
     &:hover {
