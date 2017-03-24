@@ -120,7 +120,7 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest('dest/fonts'))
 });
 
-gulp.task('cssmin', function () {
+gulp.task('cssmin', ['sass', 'bowerCSS'], function () {
   gulp.src(['css/*.css', '!' + 'css/_*.css'])
   .pipe(plumber({
     errorHandler: notify.onError("css-minify error: <%= error.message %>")
