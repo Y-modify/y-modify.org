@@ -21,8 +21,10 @@ var browserSync = require('browser-sync');
 var babel = require("gulp-babel");
 var i18n = require("i18n");
 
+var locales = ['en', 'ja'];
+
 i18n.configure({
-    locales: ['en', 'ja'],
+    locales: locales,
     directory: __dirname + '/locales'
 });
 
@@ -128,7 +130,7 @@ gulp.task('cssmin', function () {
   .pipe(gulp.dest('dest/css'));
 });
 
-gulp.task('jsmin', function(){
+gulp.task('jsmin', () => {
     gulp.src(['js/**/*.js', '!' + 'js/**/_*.js'])
     .pipe(plumber({
       errorHandler: notify.onError("js-babelify and minify error: <%= error.message %>")
@@ -141,28 +143,32 @@ gulp.task('jsmin', function(){
     .pipe(gulp.dest('dest/js'));
 });
 
-gulp.task('ejs', function() {
+gulp.task('ejs', () => {
     const HISTORY = JSON.parse(fs.readFileSync('yamax/history.json', 'utf8'));
     const srcs = ['**/*.ejs', '!' + '**/_*.ejs', '!' + 'alllang/**/*.ejs', '!' + 'node_modules/**/*.ejs'];
     let config = {
       history: HISTORY,
-      t: function(msg){
+      t: (msg) => {
         return i18n.__(msg);
-      }
-    }
-    i18n.setLocale("ja");
-    gulp.src(srcs)
-    .pipe(ejs(config, {"ext": ".php"})).on('error', function(m){
-      notify.onError("ejs error: <%= m %>");
-    })
-    .pipe(gulp.dest('dest/ja')).on('end', function(){
-      i18n.setLocale("en");
-      gulp.src(srcs)
-      .pipe(ejs(config, {"ext": ".php"})).on('error', function(m){
-        notify.onError("ejs error: <%= m %>");
-      })
-      .pipe(gulp.dest('dest/en'));
-    });
+      },
+      locale: ""
+    };
+
+    (function ep(index){
+      new Promise(function(resolve, reject) {
+        config.locale = locales[index];
+        i18n.setLocale(locales[index]);
+        gulp.src(srcs)
+        .pipe(ejs(config, {"ext": ".php"})).on('error', (m) => {
+          notify.onError("ejs error: <%= m %>");
+        })
+        .pipe(gulp.dest(`dest/${locales[index]}`))
+        .on('end', resolve);
+      }).then(() => {
+        if(index+1 < locales.length)
+          ep(index+1);
+      });
+    }(0));
 });
 
 gulp.task('alllang', function() {
