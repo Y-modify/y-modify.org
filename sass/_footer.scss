@@ -29,6 +29,14 @@
     }
   }
 
+  &--languages ul{
+    border-left-style: solid;
+    border-left-color: $footer-link-color;
+    border-left-width: 1px;
+    padding-left: 20px;
+    margin-left: 10px;
+  }
+
   ul li {
     list-style: none;
     padding-right: 1em;

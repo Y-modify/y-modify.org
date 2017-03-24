@@ -124,10 +124,20 @@
       width: auto;
     }
 
+    &__right{
+      float: right;
+      margin: 0 5px;
+
+      @include media($navigation-horizontal-bar-mode) {
+        position: absolute;
+        top: 0;
+        right: 1%;
+      }
+    }
+
     a {
       color: $navigation-color;
       display: inline-block;
-      text-decoration: none;
 
       @include media ($navigation-horizontal-bar-mode) {
         padding-right: 1em;
@@ -284,7 +294,7 @@
   // Elements on the far right
 
   .navigation--tools {
-    background: #505050;
+    background: $navigation-background;
     clear: both;
     display: block;
     height: $navigation-height;
@@ -293,6 +303,13 @@
       background: transparent;
       clear: none;
       float: right;
+    }
+    &>div{
+      margin-top: 10px;
+
+      float: left;
+      padding: 0.85em 0.85em 0.7em 0.6em;
+      width: 60%;
     }
   }
 
