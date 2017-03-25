@@ -1,3 +1,11 @@
+window.$ = window.jQuery = require('jquery');
+require('flexibility');
+require('Flowtype.js');
+require('jquery-colorbox');
+require('Swiper');
+
+require('./navigation.js');
+
 $(function(){
   $('.herounit--description').flowtype({maxFont: 16});
   $('.herounit--about').flowtype({maxFont: 20});

@@ -20,6 +20,11 @@ var pngquant = require('imagemin-pngquant');
 var browserSync = require('browser-sync');
 var babel = require("gulp-babel");
 var i18n = require("i18n");
+var runSequence = require('run-sequence');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 var locales = ['en', 'ja'];
 
@@ -53,75 +58,23 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('sass', function(){
-    gulp.src('sass/**/*.scss')
-    .pipe(plumber({
-      errorHandler: notify.onError("Sass error: <%= error.message %>")
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(sass({includePaths: bourbon.with('css')}))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('css'));
-});
-
-gulp.task('bowerCSSpre', function() {
-  var cssFilter = gulpFilter(['**/*.css', '!bower_components/font-awesome/**/*.css'], {restore: true});
-  var lessFilter = gulpFilter('**/*.less', {restore: true});
-  gulp.src(bower({
-    paths: {
-      bowerJson: 'bower.json'
-    }
-  }))
+  return gulp.src('sass/style.scss')
   .pipe(plumber({
-    errorHandler: notify.onError("bowerCSS error: <%= error.message %>")
+    errorHandler: notify.onError("Sass error: <%= error.message %>")
   }))
-  .pipe(cssFilter)
-  .pipe(rename({
-    prefix: '_',
-    extname: '.css'
-  }))
-  .pipe(gulp.dest('css'))
-  .pipe(cssFilter.restore)
-  .pipe(lessFilter)
-  .pipe(less())
-  .pipe(rename({
-    prefix: '_',
-    extname: '.css'
-  }))
-  .pipe(gulp.dest('css'))
-  .pipe(lessFilter.restore);
-});
-
-gulp.task('bowerCSS', ['bowerCSSpre'] ,function() {
-  gulp.src('css/_*.css')
-  .pipe(concat('bundle.css'))
+  .pipe(sourcemaps.init())
+  .pipe(sass({includePaths: bourbon.with('css')}))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('css'));
 });
 
-gulp.task('bowerJS', function() {
-  var jsFilter = gulpFilter(['**/*.js', '!bower_components/html5shiv/**/*.js'], {restore: true});
-  gulp.src(['bower_components/jquery/dist/jquery.js'].concat(bower({
-    paths: {
-      bowerJson: 'bower.json'
-    }
-  })))
-  .pipe(plumber({
-    errorHandler: notify.onError("bowerJS error: <%= error.message %>")
-  }))
-  .pipe(jsFilter)
-  .pipe(concat('bundle.js'))
-  .pipe(gulp.dest('js'))
-  .pipe(jsFilter.restore);
-});
-
-gulp.task('bower', ['bowerCSS', 'bowerJS']);
-
 gulp.task('fonts', function() {
-  gulp.src(['bower_components/font-awesome/fonts/**/*', 'fonts/**/*'])
+  return gulp.src(['bower_components/font-awesome/fonts/**/*', 'fonts/**/*'])
   .pipe(gulp.dest('dest/fonts'))
 });
 
-gulp.task('cssmin', ['sass', 'bowerCSS'], function () {
-  gulp.src(['css/*.css', '!' + 'css/_*.css'])
+gulp.task('cssmin', function () {
+  return gulp.src(['css/*.css', '!' + 'css/_*.css'])
   .pipe(plumber({
     errorHandler: notify.onError("css-minify error: <%= error.message %>")
   }))
@@ -130,63 +83,84 @@ gulp.task('cssmin', ['sass', 'bowerCSS'], function () {
   .pipe(gulp.dest('dest/css'));
 });
 
-gulp.task('jsmin', () => {
-    gulp.src(['js/**/*.js', '!' + 'js/**/_*.js'])
-    .pipe(plumber({
-      errorHandler: notify.onError("js-babelify and minify error: <%= error.message %>")
-    }))
-    .pipe(babel({
-            presets: ['es2015']
-        }))
+gulp.task('css', () => {
+  return runSequence(
+    'sass',
+    'cssmin'
+  );
+});
+
+gulp.task('js', () => {
+  return browserify('js/script.js', { debug: true })
+    .transform("debowerify")
+    .transform("babelify", {
+      presets: ["es2015"],
+      compact: false
+    })
+    .on("error", function (err) { notify.onError("js-babelify error: <%= err.message %>") })
+    .bundle()
+    .pipe(source('script.js'))
+    .pipe(buffer())
     .pipe(uglify({preserveComments: 'some'}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dest/js'));
 });
 
 gulp.task('ejs', () => {
-    const HISTORY = JSON.parse(fs.readFileSync('yamax/history.json', 'utf8'));
-    const srcs = ['**/*.ejs', '!' + '**/_*.ejs', '!' + 'alllang/**/*.ejs', '!' + 'node_modules/**/*.ejs'];
-    let config = {
-      history: HISTORY,
-      t: (msg) => {
-        return i18n.__(msg);
-      },
-      locale: ""
-    };
+  const HISTORY = JSON.parse(fs.readFileSync('yamax/history.json', 'utf8'));
+  const srcs = ['**/*.ejs', '!' + '**/_*.ejs', '!' + 'alllang/**/*.ejs', '!' + 'node_modules/**/*.ejs'];
+  let config = {
+    history: HISTORY,
+    t: (msg) => {
+      return i18n.__(msg);
+    },
+    locale: ""
+  };
 
-    (function ep(index){
-      new Promise(function(resolve, reject) {
-        config.locale = locales[index];
-        i18n.setLocale(locales[index]);
-        gulp.src(srcs)
-        .pipe(ejs(config, {"ext": ".php"})).on('error', (m) => {
-          notify.onError("ejs error: <%= m %>");
-        })
-        .pipe(gulp.dest(`dest/${locales[index]}`))
-        .on('end', resolve);
-      }).then(() => {
-        if(index+1 < locales.length)
-          ep(index+1);
-      });
-    }(0));
+  (function ep(index){
+    new Promise(function(resolve, reject) {
+      config.locale = locales[index];
+      i18n.setLocale(locales[index]);
+      gulp.src(srcs)
+      .pipe(ejs(config, {"ext": ".php"})).on('error', (m) => {
+        notify.onError("ejs error: <%= m %>");
+      })
+      .pipe(gulp.dest(`dest/${locales[index]}`))
+      .on('end', resolve);
+    }).then(() => {
+      if(index+1 < locales.length)
+        ep(index+1);
+    });
+  }(0));
 });
 
 gulp.task('alllang', function() {
-  gulp.src(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'])
+  return gulp.src(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'])
   .pipe(ejs({}, {"ext": ".php"}))
   .pipe(gulp.dest('dest'));
 });
 
-gulp.task('process', ['sass', 'cssmin', 'jsmin', 'fonts', 'ejs', 'alllang']);
+gulp.task('imagecopy', function() {
+  return gulp.src(['images/**/*'])
+  .pipe(gulp.dest('dest/images'));
+});
+
+gulp.task('process', () => {
+  return runSequence(
+    ['fonts','imagecopy'],
+    'css',
+    'js',
+    ['ejs', 'alllang']
+  );
+});
 
 gulp.task('watch' ,['browser-sync'] ,function(){
-    gulp.watch('sass/**/*.scss', ['sass']);
-    gulp.watch(['css/**/*.css', '!' + 'css/**/_*.css'], ['cssmin']);
-    gulp.watch(['js/**/*.js', '!' + 'js/**/_*.js'], ['jsmin']);
+    gulp.watch('sass/**/*.scss', ['css']);
+    gulp.watch(['js/**/*.js', '!' + 'js/**/_*.js'], ['js']);
     gulp.watch(['**/*.ejs', '!' + 'node_modules/**/*.ejs','!' + 'alllang/**/*.ejs', 'locales/*.json'], ['ejs']);
     gulp.watch(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'], ['alllang']);
     gulp.watch(['fonts/**/*', 'bower_components/font-awesome/fonts/**/*'], ['fonts']);
-    gulp.watch('bower.json', ['bower']);
+    gulp.watch(['images/**/*'], ['imagecopy']);
     gulp.watch('dest/**/*', ['browser-reload']);
 });
 
