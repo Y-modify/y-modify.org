@@ -165,7 +165,7 @@ gulp.task('imagecopy', function() {
   .pipe(gulp.dest('dest/images'));
 });
 
-gulp.task('process', ['fonts', 'imagecopy', 'css', 'js', 'ejs', 'alllang']);
+gulp.task('process', ['fonts', 'imagemin', 'css', 'js', 'ejs', 'alllang']);
 
 gulp.task('watch' ,['browser-sync'] ,function(){
     gulp.watch('sass/**/*.scss', ['css']);
