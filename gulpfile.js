@@ -115,13 +115,16 @@ gulp.task('ejs', () => {
     },
     locale: "",
     locales: locales,
-    buildPath: path.basename(__dirname)
+    buildPath: path.basename(__dirname),
+    bannerURL: "",//`http://blog.y-modify.org/${locales.id[index]}2017/03/02/10000views/`,
+    bannerMessage: "banner-thanks"
   };
 
   (function ep(index){
     new Promise(function(resolve, reject) {
       console.log(`${locales.name[index]}'s translation has started`);
       config.locale = locales.id[index];
+      config.bannerURL = `http://blog.y-modify.org/${locales.id[index]}/2017/03/02/10000views/`;
       i18n.setLocale(locales.id[index]);
       gulp.src(srcs)
       .pipe(ejs(config, {"ext": ".php"})).on('error', (m) => {

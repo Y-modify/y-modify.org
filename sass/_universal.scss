@@ -120,3 +120,17 @@ h2::after {
 	background: -webkit-repeating-linear-gradient(45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
 	background: repeating-linear-gradient(45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
 }
+
+.banner{
+  display: block;
+  height: $banner-height;
+  background-color: $banner-background;
+  width: 100%;
+  color: $banner-color;
+  text-align: center;
+  line-height: $banner-height;
+  font-size: $banner-font-size;
+  &:hover{
+    background-color: $banner-background-hover;
+  }
+}

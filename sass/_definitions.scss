@@ -34,6 +34,12 @@ $footer-color: white;
 $footer-link-color: transparentize($footer-color, 0.6);
 $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
+$banner-height: 70px;
+$banner-color: #FFF;
+$banner-font-size: 20px;
+$banner-background: #9b59b6;
+$banner-background-hover: #8e44ad;
+
 @mixin setAnimation($name: fadeIn, $duration: 1s, $delay: 0s, $easing: $ease-in-quad, $count: infinite, $mode: none) {
   @include animation-timing-function($easing);
   @include animation-duration($duration);
