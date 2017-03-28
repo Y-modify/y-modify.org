@@ -28,11 +28,14 @@ if (isset($_COOKIE[$keyname])){
           print " (".locale_get_display_region($_GET["hl"], 'en').")";
       ?> may not be supported yet.</span>
       <div class="errorarea--languages">
-        <a class="errorarea--language btn" id="errorarea--english" href="/en">English</a>
-        <a class="errorarea--language btn" id="errorarea--japanese" href="/ja">日本語</a>
+        <% locales.id.forEach(function (value, index) { %>
+          <a class="errorarea--language btn" href="/<%- value %>"><%- locales.name[index] %></a>
+        <% }); %>
       </div>
+      <img class="errorarea--illust" src="/images/lang.svg">
     </div>
   </main>
+  <%- include("../../ejs/common/_footer") %>
   <%- include("../../ejs/common/_scripts") %>
 </body>
 </html>

@@ -26,10 +26,13 @@ var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 
-var locales = ['en', 'ja'];
+var locales = {
+  id: ['en', 'ja'],
+  name: ['English', '日本語']
+};
 
 i18n.configure({
-    locales: locales,
+    locales: locales.id,
     directory: __dirname + '/locales'
 });
 
@@ -114,21 +117,28 @@ gulp.task('ejs', () => {
     t: (msg) => {
       return i18n.__(msg);
     },
-    locale: ""
+    locale: "",
+    locales: locales
   };
 
   (function ep(index){
     new Promise(function(resolve, reject) {
-      config.locale = locales[index];
-      i18n.setLocale(locales[index]);
+      console.log(`${locales.name[index]}'s translation has started`);
+      config.locale = locales.id[index];
+      i18n.setLocale(locales.id[index]);
       gulp.src(srcs)
       .pipe(ejs(config, {"ext": ".php"})).on('error', (m) => {
+        console.log(m);
         notify.onError("ejs error: <%= m %>");
+        reject();
       })
-      .pipe(gulp.dest(`dest/${locales[index]}`))
-      .on('end', resolve);
+      .pipe(gulp.dest(`dest/${locales.id[index]}`))
+      .on('end', () => {
+        resolve();
+        console.log(`${locales.name[index]}'s translation has done`);
+      });
     }).then(() => {
-      if(index+1 < locales.length)
+      if(index+1 < locales.id.length)
         ep(index+1);
     });
   }(0));
@@ -136,7 +146,10 @@ gulp.task('ejs', () => {
 
 gulp.task('alllang', function() {
   return gulp.src(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'])
-  .pipe(ejs({}, {"ext": ".php"}))
+  .pipe(ejs({
+              locale: "en",
+              locales: locales
+            }, {"ext": ".php"}))
   .pipe(gulp.dest('dest'));
 });
 

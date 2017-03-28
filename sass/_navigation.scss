@@ -104,7 +104,16 @@
     }
   }
 
-  // The nav items
+  &--languageselect{
+    a{
+      line-height: 16px;
+    }
+    &__current{
+      padding: 0 2px 5px 2px;
+      border-bottom: solid 2px black;
+    }
+  }
+  // The nav item
 
   ul li.navigation--link {
     background: $navigation-background;
@@ -140,7 +149,7 @@
       display: inline-block;
 
       @include media ($navigation-horizontal-bar-mode) {
-        padding-right: 1em;
+        margin-right: 1em;
       }
 
       &:focus,

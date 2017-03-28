@@ -9,8 +9,9 @@
     </ul>
     <div class="footer--languages">
       <ul>
-        <li><a href="/en">English</a></li>
-        <li><a href="/ja">Japanese</a></li>
+        <% locales.id.forEach(function (value, index) { %>
+          <li><a href="/<%- value %>"><%- locales.name[index] %></a></li>
+        <% }); %>
       </ul>
     </div>
     <div class="footer--links">
