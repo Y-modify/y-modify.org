@@ -27,7 +27,9 @@ let babelify = require('babelify');
 let source = require('vinyl-source-stream');
 let buffer = require('vinyl-buffer');
 
-let locales = {
+const distPath = "dest/";
+
+const locales = {
   id: ['en', 'ja'],
   name: ['English', '日本語']
 };
@@ -64,7 +66,7 @@ gulp.task('imagemin', function() {
          imagemin.gifsicle()
        ]
     ))
-    .pipe(gulp.dest('dest/images'));
+    .pipe(gulp.dest(distPath+'/images'));
 });
 
 gulp.task('sass', function(){
@@ -80,7 +82,7 @@ gulp.task('sass', function(){
 
 gulp.task('fonts', function() {
   return gulp.src(['bower_components/font-awesome/fonts/**/*', 'fonts/**/*'])
-  .pipe(gulp.dest('dest/fonts'))
+  .pipe(gulp.dest(distPath+'/fonts'))
 });
 
 gulp.task('cssmin', function () {
@@ -90,7 +92,7 @@ gulp.task('cssmin', function () {
   }))
   .pipe(cssmin())
   .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('dest/css'));
+  .pipe(gulp.dest(distPath+'/css'));
 });
 
 gulp.task('css', () => {
@@ -113,7 +115,7 @@ gulp.task('js', () => {
     .pipe(buffer())
     .pipe(uglify({preserveComments: 'some'}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dest/js'));
+    .pipe(gulp.dest(distPath+'/js'));
 });
 
 gulp.task('ejs', () => {
@@ -139,7 +141,7 @@ gulp.task('ejs', () => {
         notify.onError("ejs error: <%= m %>");
         reject();
       })
-      .pipe(gulp.dest(`dest/${locales.id[index]}`))
+      .pipe(gulp.dest(`${distPath}/${locales.id[index]}`))
       .on('end', () => {
         resolve();
         console.log(`${locales.name[index]}'s translation has done`);
@@ -157,12 +159,12 @@ gulp.task('alllang', function() {
               locale: "en",
               locales: locales
             }, {"ext": ".php"}))
-  .pipe(gulp.dest('dest'));
+  .pipe(gulp.dest(distPath));
 });
 
 gulp.task('imagecopy', function() {
   return gulp.src(['images/**/*'])
-  .pipe(gulp.dest('dest/images'));
+  .pipe(gulp.dest(distPath+'/images'));
 });
 
 gulp.task('process', ['fonts', 'imagemin', 'css', 'js', 'ejs', 'alllang']);
@@ -174,7 +176,7 @@ gulp.task('watch' ,['browser-sync'] ,function(){
     gulp.watch(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'], ['alllang']);
     gulp.watch(['fonts/**/*', 'bower_components/font-awesome/fonts/**/*'], ['fonts']);
     gulp.watch(['images/**/*'], ['imagecopy']);
-    gulp.watch('dest/**/*', ['browser-reload']);
+    gulp.watch(distPath+'/**/*', ['browser-reload']);
 });
 
 gulp.task('default', ['process', 'watch']);
