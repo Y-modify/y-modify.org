@@ -16,8 +16,8 @@ var bower = require('main-bower-files');
 var concat = require("gulp-concat");
 var less = require('gulp-less');
 var imagemin = require('gulp-imagemin');
+var browserSync = require('browser-sync').create();
 var pngquant = require('imagemin-pngquant');
-var browserSync = require('browser-sync');
 var mozjpeg = require('imagemin-mozjpeg');
 var babel = require("gulp-babel");
 var i18n = require("i18n");
@@ -38,7 +38,7 @@ i18n.configure({
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(null, {
+  browserSync.init({
     proxy: "localhost:80"
   });
 });
