@@ -9,7 +9,6 @@ require('./navigation.js');
 $(function(){
   $('.herounit--description').flowtype({maxFont: 16});
   $('.herounit--about').flowtype({maxFont: 20});
-  $('.slider--lettersbox').flowtype({minFont: 20});
 
   let imswiper = new Swiper ('#slider--images', {
     speed: 600,
