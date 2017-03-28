@@ -20,7 +20,9 @@
       <% if(typeof(value.className)!='undefined'){ %>
         <%= value.className %>
       <% } %>
-    " href="<%= value.href %>"
+    " <% if(typeof(value.href)!='undefined'){ %>
+        href="<%= value.href %>"
+      <% } %>
     ><%= value.string %></a>
     <% }); %>
   </div>
