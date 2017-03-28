@@ -26,6 +26,7 @@ let browserify = require('browserify');
 let babelify = require('babelify');
 let source = require('vinyl-source-stream');
 let buffer = require('vinyl-buffer');
+let rimraf = require('rimraf');
 
 const distPath = "dest/";
 
@@ -152,6 +153,10 @@ gulp.task('imagecopy', function() {
   .pipe(gulp.dest(distPath+'/images'));
 });
 
+gulp.task('clean', function (cb) {
+  rimraf(distPath, cb);
+});
+
 gulp.task('process', ['fonts', 'imagemin', 'sass', 'js', 'ejs', 'alllang']);
 
 gulp.task('watch' ,['browser-sync'] ,function(){
@@ -164,4 +169,4 @@ gulp.task('watch' ,['browser-sync'] ,function(){
     gulp.watch(distPath+'/**/*', ['browser-reload']);
 });
 
-gulp.task('default', ['process', 'watch']);
+gulp.task('default', ['process']);
