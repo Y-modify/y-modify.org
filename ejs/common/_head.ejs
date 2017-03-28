@@ -29,8 +29,9 @@ relativePath = () => {
   <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
   <meta name="theme-color" content="#2c3e50">
   <link rel="stylesheet" href="/css/style.min.css" media="screen" charset="utf-8">
-  <link rel="alternate" hreflang="ja" href="https://www.y-modify.org/ja" />
-  <link rel="alternate" hreflang="en" href="https://www.y-modify.org/en" />
+  <% locales.id.forEach(function (value, index) { %>
+    <link rel="alternate" hreflang="<%- value %>" href="https://www.y-modify.org/<%- value %>" />
+  <% }); %>
   <title><%- title %></title>
   <!--[if lt IE 9]>
     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
