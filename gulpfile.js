@@ -1,33 +1,33 @@
 'use strict';
 
-var fs = require('fs');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var bourbon = require('node-bourbon');
-var sourcemaps = require('gulp-sourcemaps');
-var cssmin = require('gulp-cssmin');
-var rename = require('gulp-rename');
-var plumber = require('gulp-plumber');
-var notify  = require('gulp-notify');
-var uglify = require('gulp-uglify');
-var ejs = require('gulp-ejs');
-var gulpFilter = require('gulp-filter');
-var bower = require('main-bower-files');
-var concat = require("gulp-concat");
-var less = require('gulp-less');
-var imagemin = require('gulp-imagemin');
-var browserSync = require('browser-sync').create();
-var pngquant = require('imagemin-pngquant');
-var mozjpeg = require('imagemin-mozjpeg');
-var babel = require("gulp-babel");
-var i18n = require("i18n");
-var runSequence = require('run-sequence');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
+let fs = require('fs');
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let bourbon = require('node-bourbon');
+let sourcemaps = require('gulp-sourcemaps');
+let cssmin = require('gulp-cssmin');
+let rename = require('gulp-rename');
+let plumber = require('gulp-plumber');
+let notify  = require('gulp-notify');
+let uglify = require('gulp-uglify');
+let ejs = require('gulp-ejs');
+let gulpFilter = require('gulp-filter');
+let bower = require('main-bower-files');
+let concat = require("gulp-concat");
+let less = require('gulp-less');
+let imagemin = require('gulp-imagemin');
+let browserSync = require('browser-sync').create();
+let pngquant = require('imagemin-pngquant');
+let mozjpeg = require('imagemin-mozjpeg');
+let babel = require("gulp-babel");
+let i18n = require("i18n");
+let runSequence = require('run-sequence');
+let browserify = require('browserify');
+let babelify = require('babelify');
+let source = require('vinyl-source-stream');
+let buffer = require('vinyl-buffer');
 
-var locales = {
+let locales = {
   id: ['en', 'ja'],
   name: ['English', '日本語']
 };
