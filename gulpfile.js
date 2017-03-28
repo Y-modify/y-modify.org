@@ -18,6 +18,7 @@ var less = require('gulp-less');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var browserSync = require('browser-sync');
+var mozjpeg = require('imagemin-mozjpeg');
 var babel = require("gulp-babel");
 var i18n = require("i18n");
 var runSequence = require('run-sequence');
@@ -47,17 +48,23 @@ gulp.task('browser-reload', function() {
 });
 
 gulp.task('imagemin', function() {
-  gulp.src(['images/icons/**/*'])
-        .pipe(gulp.dest('dest/images/icons'));
-  gulp.src('images/*.png')
-        .pipe(imagemin({
-          progressive: true,
-          use: [pngquant({quality: '60-80', speed: 1})]
-        }))
-        .pipe(gulp.dest('dest/images'));
-  gulp.src(['images/**/*.jpg', 'images/**/*.svg', 'images/**/*.gif'])
-        .pipe(imagemin())
-        .pipe(gulp.dest('dest/images'));
+  gulp.src('images/**/*')
+    .pipe(imagemin([
+         pngquant({
+           quality: '65-80',
+           speed: 1,
+           floyd: 0
+         }),
+         mozjpeg({
+           quality: 85,
+           progressive: true
+         }),
+         imagemin.svgo(),
+         imagemin.optipng(),
+         imagemin.gifsicle()
+       ]
+    ))
+    .pipe(gulp.dest('dest/images'));
 });
 
 gulp.task('sass', function(){
