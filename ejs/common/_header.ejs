@@ -1,6 +1,8 @@
+<% if(absolutePath() === "/") { %>
 <a href="<%- bannerURL %>" class="banner" target="_blank">
   <%= t(bannerMessage) %>
 </a>
+<% } %>
 <header class="navigation" role="banner">
   <div class="navigation--wrapper">
     <a href="/<%- locale %>" class="navigation--logo">
