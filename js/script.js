@@ -1,3 +1,5 @@
+'use strict';
+
 window.$ = window.jQuery = require('jquery');
 require('flexibility');
 require('Flowtype.js');

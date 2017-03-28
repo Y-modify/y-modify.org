@@ -1,3 +1,5 @@
+'use strict';
+
 $(window).resize(function() {
   let more = document.getElementById("js-navigation-more");
   if ($(more).length > 0) {
