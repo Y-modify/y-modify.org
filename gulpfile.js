@@ -1,6 +1,7 @@
 'use strict';
 
 let fs = require('fs');
+let path = require('path');
 let gulp = require('gulp');
 let sass = require('gulp-sass');
 let bourbon = require('node-bourbon');
@@ -106,14 +107,15 @@ gulp.task('js', () => {
 
 gulp.task('ejs', () => {
   const HISTORY = JSON.parse(fs.readFileSync('yamax/history.json', 'utf8'));
-  const srcs = ['**/*.ejs', '!' + '**/_*.ejs', '!' + 'alllang/**/*.ejs', '!' + 'node_modules/**/*.ejs'];
+  const srcs = ['**/*.ejs', '!' + 'dest/**/*.ejs', '!' + '**/_*.ejs', '!' + 'alllang/**/*.ejs', '!' + 'node_modules/**/*.ejs'];
   let config = {
     history: HISTORY,
     t: (msg) => {
       return i18n.__(msg);
     },
     locale: "",
-    locales: locales
+    locales: locales,
+    buildPath: path.basename(__dirname)
   };
 
   (function ep(index){
@@ -143,7 +145,8 @@ gulp.task('alllang', function() {
   return gulp.src(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'])
   .pipe(ejs({
               locale: "en",
-              locales: locales
+              locales: locales,
+              buildPath: path.basename(__dirname)
             }, {"ext": ".php"}))
   .pipe(gulp.dest(distPath));
 });
