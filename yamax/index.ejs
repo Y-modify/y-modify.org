@@ -18,6 +18,10 @@
         subtitle: t("slider-humanoid"),
         background: "/images/3dm.png",
       }) %>
+      <%- include("../ejs/_intro", {
+        socials: false,
+        description: t("yamax-desc")
+      }) %>
       <%- include("../ejs/_herounit", {
         title: t("yamax-moving"),
         subtitle: "A Neat System",

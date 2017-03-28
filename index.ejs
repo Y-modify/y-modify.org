@@ -29,19 +29,10 @@
         image: "/images/back1.jpg",
       }
       ]}) %>
-    <div class="intro">
-      <div class="socials">
-        <a href="https://twitter.com/ymodify314" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
-        <a href="https://www.facebook.com/Ymodify314" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
-        <a href="https://plus.google.com/u/0/b/109945619381118132728/+YmodifyOrg314/" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
-        <a href="https://instagram.com/ymodify314/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
-        <a href="http://y-modify.tumblr.com/" target="_blank"><i class="fa fa-tumblr fa-lg"></i></a>
-        <a href="https://www.youtube.com/channel/UCnDs9Rdml-Z_bYAn3CSBxeg" target="_blank"><i class="fa fa-youtube-play"></i></a>
-      </div>
-      <div class="description">
-        <%- t("ymodify-desc") %>
-      </div>
-    </div>
+    <%- include("ejs/_intro", {
+      socials: true,
+      description: t("ymodify-desc")
+    }) %>
     <ul class="ulist">
       <%- include("ejs/_herounit", {
         title: "YamaX",

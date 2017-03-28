@@ -19,6 +19,10 @@
         background: "/images/tomato2.png",
         className: "pixelated herounit--space__charbg",
       }) %>
+      <%- include("../../ejs/_intro", {
+        socials: false,
+        description: t("member-desc")
+      }) %>
       <li class="herounit">
         <div class="members">
           <%- include("../../ejs/_member", {
