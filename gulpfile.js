@@ -77,29 +77,14 @@ gulp.task('sass', function(){
   .pipe(sourcemaps.init())
   .pipe(sass({includePaths: bourbon.with('css')}))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('css'));
-});
-
-gulp.task('fonts', function() {
-  return gulp.src(['bower_components/font-awesome/fonts/**/*', 'fonts/**/*'])
-  .pipe(gulp.dest(distPath+'/fonts'))
-});
-
-gulp.task('cssmin', function () {
-  return gulp.src(['css/*.css', '!' + 'css/_*.css'])
-  .pipe(plumber({
-    errorHandler: notify.onError("css-minify error: <%= error.message %>")
-  }))
   .pipe(cssmin())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest(distPath+'/css'));
 });
 
-gulp.task('css', () => {
-  return runSequence(
-    'sass',
-    'cssmin'
-  );
+gulp.task('fonts', function() {
+  return gulp.src(['bower_components/font-awesome/fonts/**/*', 'fonts/**/*'])
+  .pipe(gulp.dest(distPath+'/fonts'))
 });
 
 gulp.task('js', () => {
@@ -167,10 +152,10 @@ gulp.task('imagecopy', function() {
   .pipe(gulp.dest(distPath+'/images'));
 });
 
-gulp.task('process', ['fonts', 'imagemin', 'css', 'js', 'ejs', 'alllang']);
+gulp.task('process', ['fonts', 'imagemin', 'sass', 'js', 'ejs', 'alllang']);
 
 gulp.task('watch' ,['browser-sync'] ,function(){
-    gulp.watch('sass/**/*.scss', ['css']);
+    gulp.watch('sass/**/*.scss', ['sass']);
     gulp.watch(['js/**/*.js', '!' + 'js/**/_*.js'], ['js']);
     gulp.watch(['**/*.ejs', '!' + 'node_modules/**/*.ejs','!' + 'alllang/**/*.ejs', 'locales/*.json'], ['ejs']);
     gulp.watch(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'], ['alllang']);
