@@ -153,7 +153,7 @@ gulp.task('ejs', () => {
   }(0));
 });
 
-gulp.task('alllang', function() {
+gulp.task('alllang:ejs', function() {
   return gulp.src(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'])
   .pipe(ejs({
               locale: "en",
@@ -170,6 +170,13 @@ gulp.task('alllang', function() {
             }, {"ext": ".php"}))
   .pipe(gulp.dest(distPath));
 });
+
+gulp.task('alllang:all', () => {
+  return gulp.src(['alllang/**/*', 'alllang/**/.*', '!' + 'alllang/**/*.ejs'])
+  .pipe(gulp.dest(distPath));
+});
+
+gulp.task('alllang', ['alllang:ejs', 'alllang:all']);
 
 gulp.task('imagecopy', function() {
   return gulp.src(['images/**/*'])

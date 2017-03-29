@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteBase /
+RewriteCond %{REQUEST_URI} !/ja
+RewriteCond %{REQUEST_URI} !/en
+RewriteCond %{REQUEST_URI} !/css
+RewriteCond %{REQUEST_URI} !/fonts
+RewriteCond %{REQUEST_URI} !/images
+RewriteCond %{REQUEST_URI} !/js
+RewriteCond %{REQUEST_URI} !/lang
+
+RewriteCond %{HTTP_COOKIE} ja
+RewriteRule ^(.*)$ ja/$1 [R]
+
+RewriteCond %{HTTP_COOKIE} en
+RewriteRule ^(.*)$ en/$1 [R]
