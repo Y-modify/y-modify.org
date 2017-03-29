@@ -14,7 +14,7 @@
 	"top-ozone": "Intel EdisonのためのOSです。\n慣れ親しんだ環境でEdisonを。\n",
 	"top-ozone-another": "順次OS追加予定",
 	"top-ozone-open": "オープン",
-	"yamax-desc": "\"趣味のための\"ヒューマノイド\nこれからヒューマノイドを作る、全ての人に",
+	"yamax-desc": "'趣味のための'ヒューマノイド\nこれからヒューマノイドを作る、全ての人に",
 	"yamax-moving": "歩行へのこだわり",
 	"yamax-voicecontrol": "音声コントロール",
 	"yamax-structure": "設計と構造",
@@ -38,5 +38,13 @@
 	"member-fish": "さかなん",
 	"member-fish-desc": "我らの守り神さかなんである。\n我らの守り神さかなんである。(大事なことなので２回言いました)\nマスコットであり「さかなん」という歴史的な着想を宿した人です(一応人間)",
 	"member-desc": "Y-modifyの愉快なメンバーを紹介します",
-	"banner-thanks": "ありがとう! 10000閲覧"
+	"banner-thanks": "ありがとう! 10000閲覧",
+	"top-title": "Y-modify ワクワクする電子工作を",
+	"top-keywords": "電子工作,ロボット,ヒューマノイド,YamaX",
+	"about-title": "私たちについて - Y-modify",
+	"about-keywords": "電子工作,ロボット",
+	"yamax-title": "YamaX 趣味のヒューマノイド - Y-modify",
+	"yamax-keywords": "Edison,ロボット,ヒューマノイド,YamaX",
+	"member-title": "メンバー - Y-modify",
+	"member-keywords": "電子工作,ロボット"
 }

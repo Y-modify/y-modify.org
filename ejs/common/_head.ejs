@@ -1,25 +1,17 @@
-<%
-absolutePath = () => {
-  return filename.split(buildPath)[filename.split(buildPath).length - 1].replace('.ejs','.php').replace('index.php', '');
-}
-relativePath = () => {
-  return '../'.repeat([absolutePath().split('/').length - 2]);
-}
-%>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta property="og:title" content="<%- title %>">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="<%- url %>">
-  <meta property="og:image" content="<%- imageurl %>">
+  <meta property="og:url" content="htpps://<%- baseURL + url %>">
+  <meta property="og:image" content="https://<%- baseURL + imageurl %>">
   <meta property="og:site_name" content="<%- sitename %>">
-  <meta property="og:description" content="<%- description %>">
+  <meta property="og:description" content="<%- description.replace(/[\n\r]/g, " ").replace("\"", "") %>">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="<%- twitter %>">
   <meta name="keywords" content="<%- keywords %>">
-  <meta name="description" content="<%- description %>">
+  <meta name="description" content="<%- description.replace(/[\n\r]/g, " ").replace("\"", "")  %>">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
@@ -30,7 +22,7 @@ relativePath = () => {
   <meta name="theme-color" content="#2c3e50">
   <link rel="stylesheet" href="/css/style.min.css" media="screen" charset="utf-8">
   <% locales.id.forEach(function (value, index) { %>
-    <link rel="alternate" hreflang="<%- value %>" href="https://www.y-modify.org/<%- value %>" />
+    <link rel="alternate" hreflang="<%- value %>" href="https://<%- baseURL %>/<%- value %>" />
   <% }); %>
   <title><%- title %></title>
   <!--[if lt IE 9]>

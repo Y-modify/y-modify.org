@@ -10,13 +10,11 @@ if (isset($_COOKIE[$keyname])){
 <!DOCTYPE html>
 <html lang="<%- locale %>">
 <%- include("../../ejs/common/_head", {
-  title: "Y-modify",
-  url: "www.y-modify.org",
-  imageurl: "images/yop.png",
-  sitename: "Y-modify",
-  description: "yahahahaha",
-  twitter: "@ymodify314",
-  keywords: "電子工作,YamaX,ヒューマノイド"
+  title: "Select language | Y-modify",
+  url: absolutePath(filename),
+  imageurl: "/images/lang.svg",
+  description: "Your language may not be supported yet",
+  keywords: "Y-modify,ヒューマノイド,ロボット"
 }) %>
 <body>
   <main role="main">

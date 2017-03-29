@@ -14,7 +14,7 @@
 	"top-ozone": "Useful alternative OSs for Intel Edison.\nEnjoy Intel Edison in familiar environment\n",
 	"top-ozone-another": "Another OS will be added",
 	"top-ozone-open": "Open source (Why not again)",
-	"yamax-desc": "\"A Humanoid for Hobby\"\nFor everyone who starts making humanoid from now on.",
+	"yamax-desc": "'A Humanoid for Hobby'\nFor everyone who starts making humanoid from now on.",
 	"yamax-moving": "Moving",
 	"yamax-voicecontrol": "Voice Control",
 	"yamax-structure": "Structure",
@@ -38,5 +38,13 @@
 	"member-fish": "Sacanan",
 	"member-fish-desc": "Our guardian deity, Sacanan.\nSacanan is our mascot.",
 	"member-desc": "Let me introduce Y-modify's member",
-	"banner-thanks": "10000 Views! Thanks!"
+	"banner-thanks": "10000 Views! Thanks!",
+	"top-title": "Y-modify The interesting making.",
+	"top-keywords": "Robot,YamaX,Humanoid,Make",
+	"about-title": "About us - Y-modify",
+	"about-keywords": "Robot,Make",
+	"yamax-title": "YamaX A Humanoid for Hobby - Y-modify",
+	"yamax-keywords": "Robot,YamaX,Humanoid",
+	"member-title": "Member - Y-modify",
+	"member-keywords": "Robot,Make"
 }

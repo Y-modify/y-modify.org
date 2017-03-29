@@ -30,6 +30,7 @@ let buffer = require('vinyl-buffer');
 let rimraf = require('rimraf');
 
 const distPath = "dest/";
+const baseURL = "www.y-modify.org";
 
 const locales = {
   id: ['en', 'ja'],
@@ -115,9 +116,17 @@ gulp.task('ejs', () => {
     },
     locale: "",
     locales: locales,
-    buildPath: path.basename(__dirname),
+    baseURL: baseURL,
+    twitter: "@ymodify314",
+    sitename: "Y-modify",
     bannerURL: "",//`http://blog.y-modify.org/${locales.id[index]}2017/03/02/10000views/`,
-    bannerMessage: "banner-thanks"
+    bannerMessage: "banner-thanks",
+    absolutePath: (filename) => {
+      return filename.split(path.basename(__dirname))[filename.split(path.basename(__dirname)).length - 1].replace('.ejs','.php').replace('index.php', '');
+    },
+    relativePath: (absPath) => {
+      return '../'.repeat([absPath.split('/').length - 2]);
+    }
   };
 
   (function ep(index){
@@ -148,8 +157,16 @@ gulp.task('alllang', function() {
   return gulp.src(['alllang/**/*.ejs', '!' + 'alllang/**/_*.ejs'])
   .pipe(ejs({
               locale: "en",
+              baseURL: baseURL,
+              twitter: "@ymodify314",
+              sitename: "Y-modify",
               locales: locales,
-              buildPath: path.basename(__dirname)
+              absolutePath: (filename) => {
+                return filename.split(path.basename(__dirname))[filename.split(path.basename(__dirname)).length - 1].replace('.ejs','.php').replace('index.php', '');
+              },
+              relativePath: (absPath) => {
+                return '../'.repeat([absPath.split('/').length - 2]);
+              }
             }, {"ext": ".php"}))
   .pipe(gulp.dest(distPath));
 });

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="<%- locale %>">
 <%- include("../ejs/common/_head", {
-  title: "Members | Y-modify",
-  url: "www.y-modify.org/yamax",
-  imageurl: "images/yop.png",
-  sitename: "Y-modify",
-  description: "yahahahaha",
-  twitter: "@ymodify314",
-  keywords: "電子工作,YamaX,ヒューマノイド",
+  title: t("about-title"),
+  url: absolutePath(filename),
+  imageurl: "/images/sakana.png",
+  description: t("ymodify-desc"),
+  keywords: t("about-keywords")
 }) %>
 <body>
   <%- include("../ejs/common/_header") %>

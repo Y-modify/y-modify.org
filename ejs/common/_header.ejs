@@ -1,4 +1,4 @@
-<% if(absolutePath() === "/") { %>
+<% if(absolutePath(filename) === "/") { %>
 <a href="<%- bannerURL %>" class="banner" target="_blank">
   <%= t(bannerMessage) %>
 </a>
@@ -35,7 +35,7 @@
         <li class="navigation--link"><a href="http://blog.y-modify.org/" target="_blank">Blog</a></li>
         <li class="navigation--link navigation--link__right navigation--languageselect">
           <% locales.id.forEach(function (value, index) { %>
-            <a href="/<%- value %><%- absolutePath() %>" <% if(value == locale){ %> class="navigation--languageselect__current" <% } %> ><%- locales.name[index] %></a>
+            <a href="/<%- value %><%- absolutePath(filename) %>" <% if(value == locale){ %> class="navigation--languageselect__current" <% } %> ><%- locales.name[index] %></a>
           <% }); %>
         </li>
       </ul>
