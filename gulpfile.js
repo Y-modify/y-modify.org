@@ -30,6 +30,7 @@ let buffer = require('vinyl-buffer');
 let rimraf = require('rimraf');
 let autoprefixer = require('gulp-autoprefixer');
 let sitemap = require('gulp-sitemap');
+let ftp = require('vinyl-ftp');
 
 const distPath = "dest/";
 const baseURL = "www.y-modify.org";
@@ -200,6 +201,19 @@ gulp.task('sitemap', ()=>{
 gulp.task('imagecopy', function() {
   return gulp.src(['images/**/*'])
   .pipe(gulp.dest(distPath+'/images'));
+});
+
+gulp.task('deploy', () => {
+  let config = JSON.parse(fs.readFileSync("ftp.json", 'utf8'));
+  config.log = console.log;
+
+  // デプロイ先ディレクトリ
+  let remoteDest = '/home/y-modify/www/';
+
+  let conn = ftp.create(config);
+  return gulp.src([distPath+'**/*','!'+distPath+'**/.DS_Store'], {buffer: false, dot: true})
+    .pipe(conn.newerOrDifferentSize(remoteDest))
+    .pipe(conn.dest(remoteDest));+
 });
 
 gulp.task('clean', function (cb) {
