@@ -1,0 +1,3 @@
+User-Agent:*
+Disallow:
+Sitemap:http://www.y-modify.org/sitemap.xml

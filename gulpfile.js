@@ -29,6 +29,7 @@ let source = require('vinyl-source-stream');
 let buffer = require('vinyl-buffer');
 let rimraf = require('rimraf');
 let autoprefixer = require('gulp-autoprefixer');
+let sitemap = require('gulp-sitemap');
 
 const distPath = "dest/";
 const baseURL = "www.y-modify.org";
@@ -185,6 +186,16 @@ gulp.task('alllang:all', () => {
 });
 
 gulp.task('alllang', ['alllang:ejs', 'alllang:all']);
+
+gulp.task('sitemap', ()=>{
+  return gulp.src(locales.id.map((element)=>distPath+element+"/**/*.php").concat(["!"+distPath+"**/error/**/*.php"]), {
+        read: false
+    })
+    .pipe(sitemap({
+        siteUrl: protocol+'://'+baseURL
+    }))
+    .pipe(gulp.dest(distPath));
+});
 
 gulp.task('imagecopy', function() {
   return gulp.src(['images/**/*'])
