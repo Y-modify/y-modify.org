@@ -28,6 +28,7 @@ let babelify = require('babelify');
 let source = require('vinyl-source-stream');
 let buffer = require('vinyl-buffer');
 let rimraf = require('rimraf');
+let autoprefixer = require('gulp-autoprefixer');
 
 const distPath = "dest/";
 const baseURL = "www.y-modify.org";
@@ -79,6 +80,10 @@ gulp.task('sass', function(){
   }))
   .pipe(sourcemaps.init())
   .pipe(sass({includePaths: bourbon.with('css')}))
+  .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
   .pipe(sourcemaps.write())
   .pipe(cssmin())
   .pipe(rename({suffix: '.min'}))
