@@ -44,6 +44,7 @@
         buttons: [{
           string: "Watch video",
           href: "https://www.youtube.com/embed/IcpN3AtuAqs?rel=0&autoplay=1",
+          className: "youtube",
         },],
       }) %>
       <%- include("../ejs/_herounit", {
@@ -53,8 +54,8 @@
         about: t("yamax-structure-desc"),
         points: [],
         buttons: [{
-          string: "View 3D Data",
-          href: "#",
+          string: "View 3D Data (Coming soon)",
+          className: "disabled"
         },{
           string: "View on Github",
           href: "https://github.com/Y-modify/YamaX-3.2/blob/master/Designs/model/YamaX3.2.stl",
