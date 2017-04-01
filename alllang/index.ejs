@@ -13,9 +13,11 @@ if (isset($_COOKIE[$keyname])){
     //var_dump(dns_get_record(implode(".", array_reverse(explode(".", $_SERVER["REMOTE_ADDR"]))).".cc.wariate.jp", DNS_TXT))/*[0]["txt"]*/;
   }
 }
-$url = $_SERVER["HTTP_HOST"]."/".$lang;
+$url = $_SERVER["HTTP_HOST"]."/".$lang.$_GET["to"];
 if (file_exists($lang) == FALSE) {//その国対応してる?
   $url = $_SERVER["HTTP_HOST"]."/lang?hl=".country_code_to_locale($country);
+  if(isset($_GET["to"]))
+    $url .= "&to=".$_GET["to"];
 }else{//るー！
   setcookie($keyname, $lang);
 }

@@ -2,7 +2,7 @@
 $keyname = "LANG";
 if (isset($_COOKIE[$keyname])){
   $lang = $_COOKIE[$keyname];
-  $url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://').$_SERVER["HTTP_HOST"]."/".$lang;
+  $url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://').$_SERVER["HTTP_HOST"]."/".$lang.$_GET["to"];
   header("Location: {$url}");
   exit;
 }
@@ -27,7 +27,7 @@ if (isset($_COOKIE[$keyname])){
       ?> may not be supported yet.</span>
       <div class="errorarea--languages">
         <% locales.id.forEach(function (value, index) { %>
-          <a class="errorarea--language btn" href="/<%- value %>"><%- locales.name[index] %></a>
+          <a class="errorarea--language btn" href="/<%- value %><?php echo $_GET["to"] ?>"><%- locales.name[index] %></a>
         <% }); %>
       </div>
       <img class="errorarea--illust" src="/images/lang.svg">
