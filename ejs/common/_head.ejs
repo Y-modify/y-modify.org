@@ -4,8 +4,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta property="og:title" content="<%- title %>">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="htpps://<%- baseURL + url %>">
-  <meta property="og:image" content="https://<%- baseURL + imageurl %>">
+  <meta property="og:url" content="<%- protocol %>://<%- baseURL + url %>">
+  <meta property="og:image" content="<%- protocol %>://<%- baseURL + imageurl %>">
   <meta property="og:site_name" content="<%- sitename %>">
   <meta property="og:description" content="<%- description.replace(/[\n\r]/g, " ").replace("\"", "") %>">
   <meta name="twitter:card" content="summary">
@@ -22,7 +22,7 @@
   <meta name="theme-color" content="#2c3e50">
   <link rel="stylesheet" href="/css/style.min.css" media="screen" charset="utf-8">
   <% locales.id.forEach(function (value, index) { %>
-    <link rel="alternate" hreflang="<%- value %>" href="https://<%- baseURL %>/<%- value %>" />
+    <link rel="alternate" hreflang="<%- value %>" href="<%- protocol %>://<%- baseURL %>/<%- value %>" />
   <% }); %>
   <title><%- title %></title>
   <!--[if lt IE 9]>
