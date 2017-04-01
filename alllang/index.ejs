@@ -3,7 +3,7 @@ $keyname = "LANG";
 if (isset($_COOKIE[$keyname])){
     $lang = $_COOKIE[$keyname];
 }else{
-  if($_SERVER["REMOTE_ADDR"] == "127.0.0.1" || $_SERVER["REMOTE_ADDR"] == "::1"){//for debug
+  if(!filter_var($_SERVER["REMOTE_ADDR"], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE |  FILTER_FLAG_NO_RES_RANGE)){//for debug
     $lang = "ja";
   }else{
     $country = strtolower(dns_get_record(implode(".", array_reverse(explode(".", $_SERVER["REMOTE_ADDR"]))).".cc.wariate.jp", DNS_TXT)[0]["txt"]);
