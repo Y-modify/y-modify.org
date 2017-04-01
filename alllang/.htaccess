@@ -1,3 +1,8 @@
+ErrorDocument 403 /error/403.php
+ErrorDocument 404 /error/404.php
+ErrorDocument 503 /error/503.php
+ErrorDocument 500 /error/500.php
+
 RewriteEngine on
 
 RewriteBase /

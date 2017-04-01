@@ -46,5 +46,22 @@
 	"yamax-title": "YamaX A Humanoid for Hobby - Y-modify",
 	"yamax-keywords": "Robot,YamaX,Humanoid",
 	"member-title": "Member - Y-modify",
-	"member-keywords": "Robot,Make"
+	"member-keywords": "Robot,Make",
+	"403-title": "Forbidden",
+	"403-desc": "I'm sorry but here is restricted area. Please turn around and come from the front.",
+	"403-keywords": "Forbidden,403",
+	"404-title": "Not Found",
+	"404-desc": "The page which you're looking for is not found.",
+	"404-keywords": "NotFound,404",
+	"500-title": "Internal Server Error",
+	"500-desc": "I'm sorry. The maintainer may have missed the configuration.",
+	"500-keywords": "Error,500",
+	"418-title": "I'm a teapot",
+	"418-desc": "Give me tea leaves, not coffee",
+	"418-keywords": "teapot,418",
+	"503-title": "Service Unavailable",
+	"503-desc": "The service is temporary unavailable. Please reload after a while.",
+	"503-keywords": "unavailable,503",
+	"return-to-top": "Return to top",
+	"404-keywords": "404-keywords"
 }

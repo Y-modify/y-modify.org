@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%- locale %>">
+<%- include("../ejs/common/_head", {
+  title: t("500-title"),
+  url: absolutePath(filename),
+  imageurl: "/images/logo_250dpi.png",
+  description: t("500-desc"),
+  keywords: t("500-keywords")
+}) %>
+<body>
+  <%- include("../ejs/common/_header") %>
+  <main role="main">
+    <div class="errorarea">
+      <h1><%- t("500-title") %></h1>
+      <span class="errorarea--message"><%- t("500-desc") %></span>
+      <a href="/" class="btn errorarea--button"><%- t("return-to-top") %></a>
+      <img class="errorarea--illust pixelated" src="/images/tomato3.png">
+    </div>
+  </main>
+  <%- include("../ejs/common/_footer") %>
+  <%- include("../ejs/common/_scripts") %>
+</body>
+</html>
