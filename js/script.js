@@ -4,6 +4,7 @@ window.$ = window.jQuery = require('jquery');
 require('flexibility');
 require('Flowtype.js');
 require('jquery-colorbox');
+let Cookies = require('js-cookie');
 require('Swiper');
 
 require('./navigation.js');
@@ -11,6 +12,18 @@ require('./navigation.js');
 $(function(){
   $('.herounit--description').flowtype({maxFont: 16});
   $('.herounit--about').flowtype({maxFont: 20});
+
+  if($('.errorarea--language').on){
+    $('.errorarea--language').on('click', (event)=>{
+      Cookies.set('LANG', $(event.target).attr('href').split('/')[1]);
+    });
+  }
+
+  if($('.navigation--languageselect > a').on){
+    $('.navigation--languageselect > a').on('click', (event)=>{
+      Cookies.set('LANG', $(event.target).attr('href').split('/')[1]);
+    });
+  }
 
   let imswiper = new Swiper ('#slider--images', {
     speed: 600,
