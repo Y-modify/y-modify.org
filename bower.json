@@ -26,7 +26,5 @@
     "jquery-colorbox": "colorbox#^1.6.4",
     "js-cookie": "^2.1.3"
   },
-  "devDependencies": {
-    "html5shiv": "^3.7.3"
-  }
+  "devDependencies": {}
 }
