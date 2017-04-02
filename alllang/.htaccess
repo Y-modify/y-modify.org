@@ -8,6 +8,8 @@ RewriteCond %{HTTP_HOST} ^y-modify\.org
 RewriteRule ^(.*)$ http://www.y-modify.org/$1 [R=301,L]
 
 RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
+RewriteCond %{REQUEST_URI} !/ozone
 RewriteCond %{REQUEST_URI} !/ja
 RewriteCond %{REQUEST_URI} !/en
 RewriteCond %{REQUEST_URI} !/css
@@ -18,6 +20,7 @@ RewriteCond %{REQUEST_URI} !/lang
 RewriteCond %{HTTP_COOKIE} ja
 RewriteRule ^(.*)$ ja/$1 [R]
 
+RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
 RewriteCond %{REQUEST_URI} !/ja
 RewriteCond %{REQUEST_URI} !/en
 RewriteCond %{REQUEST_URI} !/css
@@ -28,6 +31,7 @@ RewriteCond %{REQUEST_URI} !/lang
 RewriteCond %{HTTP_COOKIE} en
 RewriteRule ^(.*)$ en/$1 [R]
 
+RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
 RewriteCond %{REQUEST_URI} !/ja
 RewriteCond %{REQUEST_URI} !/en
 RewriteCond %{REQUEST_URI} !/css
