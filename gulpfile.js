@@ -213,7 +213,7 @@ gulp.task('deploy', () => {
   let conn = ftp.create(config);
   return gulp.src([distPath+'**/*','!'+distPath+'**/.DS_Store'], {buffer: false, dot: true})
     .pipe(conn.newerOrDifferentSize(remoteDest))
-    .pipe(conn.dest(remoteDest));+
+    .pipe(conn.dest(remoteDest));
 });
 
 gulp.task('clean', function (cb) {
