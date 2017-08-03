@@ -52,7 +52,7 @@
 	"403-keywords": "Forbidden,403",
 	"404-title": "Not Found",
 	"404-desc": "The page which you're looking for is not found.",
-	"404-keywords": "NotFound,404",
+	"404-keywords": "notfound,404",
 	"500-title": "Internal Server Error",
 	"500-desc": "I'm sorry. The maintainer may have missed the configuration.",
 	"500-keywords": "Error,500",
