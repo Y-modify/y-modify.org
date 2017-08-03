@@ -63,5 +63,8 @@
 	"503-desc": "The service is temporary unavailable. Please reload after a while.",
 	"503-keywords": "unavailable,503",
 	"return-to-top": "Return to top",
-	"404-keywords": "404-keywords"
+	"year": "year",
+	"month": "month",
+	"day": "day",
+	"event": "event"
 }

@@ -5,14 +5,16 @@
   <table class="history--table">
     <thead>
       <tr>
-        <th>月</th>
-        <th>日</th>
-        <th>出来事</th>
+        <th><%= t("year") %></th>
+        <th><%= t("month") %></th>
+        <th><%= t("day") %></th>
+        <th><%= t("event") %></th>
       </tr>
     </thead>
     <tbody>
       <% data.forEach(function (value) { %>
         <tr>
+          <td><%= value.year %></td>
           <td><%= value.month %></td>
           <td><%= value.day %></td>
           <td><%= value.event %></td>
