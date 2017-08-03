@@ -1,4 +1,4 @@
-<% if(absolutePath(filename) === "/") { %>
+<% if(absolutePath(filename) === "/" && enbanner) { %>
 <a href="<%- bannerURL %>" class="banner" target="_blank">
   <%= t(bannerMessage) %>
 </a>

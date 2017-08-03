@@ -127,6 +127,7 @@ gulp.task('ejs', () => {
     baseURL: baseURL,
     twitter: "@ymodify314",
     sitename: "Y-modify",
+    enbanner: false,
     bannerURL: "",//`http://blog.y-modify.org/${locales.id[index]}2017/03/02/10000views/`,
     bannerMessage: "banner-thanks",
     protocol: protocol,
