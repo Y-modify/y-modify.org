@@ -7,6 +7,7 @@ require('jquery-colorbox');
 let Cookies = require('js-cookie');
 require('Swiper');
 require('lazysizes');
+require('lazysizes/plugins/unveilhooks/ls.unveilhooks');
 
 require('./navigation.js');
 
