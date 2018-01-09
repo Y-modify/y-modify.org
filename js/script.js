@@ -6,6 +6,7 @@ require('Flowtype.js');
 require('jquery-colorbox');
 let Cookies = require('js-cookie');
 require('Swiper');
+require('lazysizes');
 
 require('./navigation.js');
 
