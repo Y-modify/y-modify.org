@@ -15,7 +15,7 @@
   <div class="swiper-container slider--container" id="slider--images">
     <div class="swiper-wrapper">
       <% items.forEach(function (value, key) { %>
-        <div class="swiper-slide slider--slide" style="background-image: url('<%= value.image %>');"></div>
+        <div class="swiper-slide slider--slide lazyload" data-bg="<%= value.image %>"></div>
       <% }); %>
     </div>
   </div>

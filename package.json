@@ -9,6 +9,7 @@
   "author": "coord.e",
   "license": "MIT",
   "dependencies": {
+    "lazysizes": "^4.0.1",
     "node-bourbon": "^4.2.8"
   },
   "devDependencies": {
