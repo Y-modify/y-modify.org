@@ -60,16 +60,8 @@ $(function(){
       return false;
    });
 
-  $(".js-scroll-animation").addClass('js-fade-element-hide');
-
   $('.js-retbutton').click(function(){
     parent.$.fn.colorbox.close(); return false;
-  });
-
-  showScroll(".js-scroll-animation");
-
-  $(window).scroll(function() {
-    showScroll(".js-scroll-animation");
   });
 
   setCBoxSize(".youtube", window.innerWidth * 0.7, window.innerWidth * 0.7 * (720/1280), false, true);
@@ -90,23 +82,6 @@ $(function(){
       setCBoxSize(".membercard", window.innerWidth * 0.6, window.innerHeight * 0.6, true);
   });
 });
-
-function showScroll(elm){
-  $(elm).each(function(index, element){
-    if( $(element).length > 0 ) {
-      const elementTopToPageTop = $(element).offset().top;
-      const windowTopToPageTop = $(window).scrollTop();
-      const windowInnerHeight = window.innerHeight;
-      const elementTopToWindowTop = elementTopToPageTop - windowTopToPageTop;
-      const elementTopToWindowBottom = windowInnerHeight - elementTopToWindowTop;
-      const distanceFromBottomToAppear = 300;
-
-      if(elementTopToWindowBottom > distanceFromBottomToAppear) {
-        $(element).addClass('js-fade-element-show');
-      }
-    }
-  });
-}
 
 function setCBoxSize(element, w, h, inl, frame){
   inl === undefined ? false : inl;
