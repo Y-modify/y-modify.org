@@ -4,8 +4,16 @@ ErrorDocument 503 /error/503.php
 ErrorDocument 500 /error/500.php
 
 RewriteEngine on
+
+RewriteCond %{ENV:HTTPS} !^on$
 RewriteCond %{HTTP_HOST} ^y-modify\.org
-RewriteRule ^(.*)$ http://www.y-modify.org/$1 [R=301,L]
+RewriteCond %{HTTP:X-SAKURA-FORWARDED-FOR} ^$
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{ENV:HTTPS} !^on$
+RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
+RewriteCond %{HTTP:X-SAKURA-FORWARDED-FOR} ^$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteBase /
 RewriteCond %{HTTP_HOST} ^www\.y-modify\.org

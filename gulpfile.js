@@ -35,7 +35,7 @@ const ftp = require('vinyl-ftp');
 
 const distPath = "dest/";
 const baseURL = "www.y-modify.org";
-const protocol = "http";
+const protocol = "https";
 
 const locales = {
   id: ['en', 'ja'],
