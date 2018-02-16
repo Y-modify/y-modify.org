@@ -17,6 +17,7 @@ const bower = require('main-bower-files');
 const concat = require("gulp-concat");
 const less = require('gulp-less');
 const imagemin = require('gulp-imagemin');
+const imageResize = require('gulp-image-resize');
 const browserSync = require('browser-sync').create();
 const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
@@ -57,7 +58,11 @@ gulp.task('browser-reload', function() {
 });
 
 gulp.task('imagemin', function() {
-  gulp.src('images/**/*')
+  gulp.src(['images/**/*.jpg', 'images/**/*.png'])
+    .pipe(imageResize({
+      width : 1200,
+      height : 1000,
+    }))
     .pipe(imagemin([
          pngquant({
            quality: '80-90',
@@ -65,12 +70,9 @@ gulp.task('imagemin', function() {
            floyd: 0
          }),
          mozjpeg({
-           quality: 90,
+           quality: 80,
            progressive: true
          }),
-         imagemin.svgo(),
-         imagemin.optipng(),
-         imagemin.gifsicle()
        ]
     ))
     .pipe(gulp.dest(distPath+'/images'));
@@ -200,7 +202,7 @@ gulp.task('sitemap', ()=>{
 });
 
 gulp.task('imagecopy', function() {
-  return gulp.src(['images/**/*'])
+  return gulp.src(['images/**/*', '!images/**/*.jpg])
   .pipe(gulp.dest(distPath+'/images'));
 });
 
@@ -221,7 +223,7 @@ gulp.task('clean', function (cb) {
   rimraf(distPath, cb);
 });
 
-gulp.task('process', ['fonts', 'imagemin', 'sass', 'js', 'ejs', 'alllang']);
+gulp.task('process', ['fonts', 'imagecopy', 'imagemin', 'sass', 'js', 'ejs', 'alllang']);
 
 gulp.task('watch' ,['browser-sync'] ,function(){
     gulp.watch('sass/**/*.scss', ['sass']);
