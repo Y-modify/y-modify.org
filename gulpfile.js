@@ -202,7 +202,7 @@ gulp.task('sitemap', ()=>{
 });
 
 gulp.task('imagecopy', function() {
-  return gulp.src(['images/**/*', '!images/**/*.jpg])
+  return gulp.src(['images/**/*', '!images/**/*.jpg'])
   .pipe(gulp.dest(distPath+'/images'));
 });
 
