@@ -16,7 +16,7 @@ RewriteCond %{HTTP:X-SAKURA-FORWARDED-FOR} ^$
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteBase /
-RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
+RewriteCond %{HTTP_HOST} ^www.y-modify\.org
 RewriteCond %{REQUEST_URI} !/ozone
 RewriteCond %{REQUEST_URI} !/ja
 RewriteCond %{REQUEST_URI} !/en
@@ -24,28 +24,34 @@ RewriteCond %{REQUEST_URI} !/css
 RewriteCond %{REQUEST_URI} !/fonts
 RewriteCond %{REQUEST_URI} !/images
 RewriteCond %{REQUEST_URI} !/js
+RewriteCond %{REQUEST_URI} !/joinus
+RewriteCond %{REQUEST_URI} !/admin
 RewriteCond %{REQUEST_URI} !/lang
 RewriteCond %{HTTP_COOKIE} ja
 RewriteRule ^(.*)$ ja/$1 [R]
 
-RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
+RewriteCond %{HTTP_HOST} ^www.y-modify\.org
 RewriteCond %{REQUEST_URI} !/ja
 RewriteCond %{REQUEST_URI} !/en
 RewriteCond %{REQUEST_URI} !/css
 RewriteCond %{REQUEST_URI} !/fonts
 RewriteCond %{REQUEST_URI} !/images
 RewriteCond %{REQUEST_URI} !/js
+RewriteCond %{REQUEST_URI} !/joinus
+RewriteCond %{REQUEST_URI} !/admin
 RewriteCond %{REQUEST_URI} !/lang
 RewriteCond %{HTTP_COOKIE} en
 RewriteRule ^(.*)$ en/$1 [R]
 
-RewriteCond %{HTTP_HOST} ^www\.y-modify\.org
+RewriteCond %{HTTP_HOST} ^www.y-modify\.org
 RewriteCond %{REQUEST_URI} !/ja
 RewriteCond %{REQUEST_URI} !/en
 RewriteCond %{REQUEST_URI} !/css
 RewriteCond %{REQUEST_URI} !/fonts
 RewriteCond %{REQUEST_URI} !/images
 RewriteCond %{REQUEST_URI} !/js
+RewriteCond %{REQUEST_URI} !/joinus
+RewriteCond %{REQUEST_URI} !/admin
 RewriteCond %{REQUEST_URI} !/lang
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{HTTP_COOKIE} !en
