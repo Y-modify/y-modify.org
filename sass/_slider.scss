@@ -18,6 +18,10 @@
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
         font-size: 2.5em;
+        @include media ($mobile) {
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
       }
       font-size: 20px;
 
@@ -26,6 +30,14 @@
       left: 10%;
       width: 60%;
       padding: 10px;
+
+      @include media ($mobile) {
+        top: auto;
+        left: auto;
+        bottom: 8%;
+        right: 8%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
   }
 }
@@ -34,6 +46,7 @@
   z-index: -1;
   .slider--slide{
     background-size: cover;
+    background-position: 75% top;
     //background-attachment: fixed;
   }
 }

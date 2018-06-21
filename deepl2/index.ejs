@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="<%- locale %>">
+<%- include("../ejs/common/_head", {
+  title: t("deepl2-title"),
+  url: absolutePath(filename),
+  imageurl: "/images/back4.jpg",
+  description: t("deepl2-desc"),
+  keywords: t("deepl2-keywords")
+}) %>
+<body>
+  <%- include("../ejs/common/_header") %>
+  <main role="main">
+    <ul class="ulist">
+      <%- include("../ejs/_hero", {
+        title: "DeepL2",
+        subtitle: t("slider-deepl2"),
+        background: "/images/deepl2-side.png",
+      }) %>
+      <%- include("../ejs/_intro", {
+        socials: false,
+        description: t("deepl2-desc")
+      }) %>
+      <%- include("../ejs/_herounit", {
+        title: t("deepl2-control"),
+        subtitle: "Motion Making Made Easy",
+        background: "/images/deepl2-sim.png",
+        about: t("deepl2-control-desc"),
+        points: [],
+        buttons: [{
+          string: "View on Github",
+          href: "https://github.com/Y-modify/deepl2",
+        },{
+          string: "Try now (coming soon)",
+          className: "disabled",
+        },],
+      }) %>
+      <%- include("../ejs/_herounit", {
+        title: t("deepl2-common"),
+        subtitle: "The Power of Deep Learning",
+        background: "/images/deepl2-code.png",
+        about: t("deepl2-common-desc"),
+        points: [],
+        buttons: [{
+          string: "Watch video (coming soon)",
+          className: "disabled",
+        },],
+      }) %>
+      <%- include("../ejs/_herounit", {
+        title: t("deepl2-share"),
+        subtitle: "Share yout motion as it has a \"source code\"",
+        background: "/images/deepl2-sim-2.png",
+        about: t("deepl2-share-desc"),
+        points: [],
+        buttons: [{
+          string: "Get started (coming soon)",
+          className: "disabled",
+        },],
+      }) %>
+    </ul>
+  </main>
+  <%- include("../ejs/common/_footer") %>
+  <%- include("../ejs/common/_scripts") %>
+</body>
+</html>

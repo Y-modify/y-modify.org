@@ -22,9 +22,9 @@
         image: "/images/ozoneb.jpg",
       },
       {
-        title: "Enjoy making.",
-        description: t("slider-job"),
-        image: "/images/back1.jpg",
+        title: "DeepL2",
+        description: t("slider-deepl2"),
+        image: "/images/deepl2.png",
       }
       ]}) %>
     <%- include("ejs/_intro", {
@@ -34,7 +34,7 @@
     <ul class="ulist">
       <%- include("ejs/_herounit", {
         title: "YamaX",
-        subtitle: "A Humanoid Robot",
+        subtitle: "An Opened Humanoid Robot",
         background: "/images/yamax.jpg",
         about: t("top-yamax"),
         points: [t("top-yamax-structure"), t("top-yamax-actions"), t("top-yamax-linux")],
@@ -43,30 +43,36 @@
           href: "https://www.youtube.com/embed/xoz5ZIjy3ck?rel=0&autoplay=1",
           className: "youtube",
         },{
-          string: "Learn more",
+          string: "Read more",
           href: `/${locale}/yamax/`,
         },],
       }) %>
       <%- include("ejs/_herounit", {
-        idName: "flixa",
-        title: "Flixa",
-        subtitle: "X-Platform Gaming Toolkit",
-        background: "/images/flixa.jpg",
-        about: t("top-flixa"),
-        points: [t("top-flixa-embed"), t("top-flixa-lang"), t("top-flixa-open")],
+        idName: "deepl2",
+        title: "DeepL2",
+        subtitle: "Motion automation using Deep Reinforcement Learning",
+        background: "/images/deepl2-hero.png",
+        about: t("top-deepl2"),
+        points: [t("top-deepl2-learn"), t("top-deepl2-share"), t("top-deepl2-diff")],
         buttons: [{
-          string: "Coming soon",
+          string: "Read more",
+          href: `/${locale}/deepl2/`,
+        },{
+          string: "GitHub",
+          href: "https://github.com/Y-modify/deepl2",
+        },{
+          string: "Coming soon as a service",
           className: "disabled",
-        },],
+        }],
       }) %>
       <%- include("ejs/_herounit", {
         title: "Ozone OS",
         subtitle: "Alternative OSs for Intel Edison",
         background: "/images/ozoneb.jpg",
         about: t("top-ozone"),
-        points: ["Debian, CentOS, Fedora", t("top-ozone-another"), t("top-ozone-open")],
+        points: ["Debian, CentOS, Fedora are available now", t("top-ozone-another"), t("top-ozone-open")],
         buttons: [{
-          string: "Website",
+          string: "Read more",
           href: "http://ozone.y-modify.org/",
         },{
           string: "Download now",
