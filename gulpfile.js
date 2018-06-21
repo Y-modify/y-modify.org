@@ -121,9 +121,7 @@ gulp.task('ejs', () => {
   const srcs = ['**/*.ejs', '!' + 'dest/**/*.ejs', '!' + '**/_*.ejs', '!' + 'alllang/**/*.ejs', '!' + 'node_modules/**/*.ejs'];
   let config = {
     history: HISTORY,
-    t: (msg) => {
-      return i18n.__(msg);
-    },
+    t: msg => i18n.__(msg),
     locale: "",
     locales: locales,
     baseURL: baseURL,
