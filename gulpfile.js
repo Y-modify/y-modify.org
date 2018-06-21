@@ -223,7 +223,7 @@ gulp.task('clean', function (cb) {
 
 gulp.task('process', ['fonts', 'imagecopy', 'imagemin', 'sass', 'js', 'ejs', 'alllang']);
 
-gulp.task('watch' ,['browser-sync'] ,function(){
+gulp.task('watch' , function(){
     gulp.watch('sass/**/*.scss', ['sass']);
     gulp.watch(['js/**/*.js', '!' + 'js/**/_*.js'], ['js']);
     gulp.watch(['**/*.ejs', '!' + 'node_modules/**/*.ejs','!' + 'alllang/**/*.ejs', 'locales/*.json'], ['ejs']);
