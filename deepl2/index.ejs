@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="<%- locale %>">
 <%- include("../ejs/common/_head", {
-  title: t("yamax-title"),
+  title: t("deepl2-title"),
   url: absolutePath(filename),
-  imageurl: "/images/back3.jpg",
-  description: t("yamax-desc"),
-  keywords: t("yamax-keywords")
+  imageurl: "/images/back4.jpg",
+  description: t("deepl2-desc"),
+  keywords: t("deepl2-keywords")
 }) %>
 <body>
   <%- include("../ejs/common/_header") %>
   <main role="main">
     <ul class="ulist">
       <%- include("../ejs/_hero", {
-        title: "YamaX",
-        subtitle: t("slider-humanoid"),
-        background: "/images/cropped.png",
+        title: "DeepL2",
+        subtitle: t("slider-deepl2"),
+        background: "/images/deepl2-side.png",
       }) %>
       <%- include("../ejs/_intro", {
         socials: false,
-        description: t("yamax-desc")
+        description: t("deepl2-desc")
       }) %>
       <%- include("../ejs/_herounit", {
         title: t("yamax-moving"),
@@ -60,11 +60,6 @@
           string: "View on Github",
           href: "https://github.com/Y-modify/YamaX-3.2/blob/master/Designs/model/YamaX3.2.stl",
         },],
-      }) %>
-      <%- include("../ejs/_history", {
-        data: history,
-        title: t("yamax-history"),
-        subtitle: "a very long",
       }) %>
     </ul>
   </main>
